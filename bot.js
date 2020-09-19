@@ -232,7 +232,7 @@ client.on("message", function(message) {
 	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
   
-	if (message.content.startsWith('!')) {
+	if (message.content.startsWith("!")) {
 		if (command === "ping") {
 			const timeTaken = Date.now() - message.createdTimestamp;
 			message.reply(`Pong! Este mensaje tiene una latencia de ${timeTaken} ms.`);
