@@ -4,6 +4,9 @@
   "description": "Mi primer bot de Discord",
   "main": "bot.js",
   "author": "Frange",
+  "scripts": {
+    "start": "node bot.js"
+  },
   "dependencies": {
     "discord.js": "^12.3.1"
   }
