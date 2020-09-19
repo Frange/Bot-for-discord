@@ -292,6 +292,6 @@ client.once('ready', () => {
 
 client.on("message", function(message) {
 	message.reply('Mensaje léído');
-}
+});
 
 client.login(process.env.TOKEN);
