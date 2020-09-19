@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Mi primer bot de Discord",
   "author": "Frange",
+  "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
