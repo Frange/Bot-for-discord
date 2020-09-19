@@ -1,10 +1,9 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const client = new Discord.Client();
-const config = require("./auth.json");
+
 const { readdirSync } = require("fs");
 const { sep } = require("path");
 
-const TOKEN = "NzUzMjAzNzE5ODIyMTE0ODQ3.X1ixoA.JQ3EaAAOeLJK-zlehCE1mItBjW4";
 const FALL = 'fall';
 const GUY = 'guy';
 const FALL_GUYS = 'fall guys';
@@ -12,8 +11,9 @@ const AMONG = 'among';
 const AMONG_US = 'among us';
 const MONGOS = 'mongos';
 
-
 global.__basedir = __dirname;
+
+let prefix = process.env.PREFIX;
 
 function hasCroke(message) {
 	if (message.toLowerCase().includes('croke') || 
@@ -232,7 +232,7 @@ client.on("message", function(message) {
 	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
   
-	if (message.content.startsWith("!")) {
+	if (message.content.startsWith(prefix)) {
 		if (command === "ping") {
 			const timeTaken = Date.now() - message.createdTimestamp;
 			message.reply(`Pong! Este mensaje tiene una latencia de ${timeTaken} ms.`);
@@ -272,4 +272,4 @@ client.on("message", function(message) {
 	}
 });
 
-client.login(TOKEN);
+client.login(process.env.TOKEN);
