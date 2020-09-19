@@ -224,7 +224,6 @@ client.once('ready', () => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
-	message.reply('Bot iniciado');
 });
 
 client.on("message", function(message) {
