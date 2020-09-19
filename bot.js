@@ -4,7 +4,7 @@ const config = require("./auth.json");
 const { readdirSync } = require("fs");
 const { sep } = require("path");
 
-const TOKEN = "-";
+const TOKEN = "NzUzMjAzNzE5ODIyMTE0ODQ3.X1ixoA.JQ3EaAAOeLJK-zlehCE1mItBjW4";
 const FALL = 'fall';
 const GUY = 'guy';
 const FALL_GUYS = 'fall guys';
@@ -150,9 +150,8 @@ function sendRandomFunnyQuote(message) {
 	        `Rechazo tu realidad y la cambio por la mía`,
 	        `Cada palabra que sale de tu boca es una estupidez`,
 	        `La gente se inventa estadísticas con tal de demostrar algo. Eso lo sabe el 14 porciento de la gente`,
-	        `¿ Has bailado con el demonio a la luz de la luna ? muahahahahaha`,
 	        `El aliento de mi gato huele a comida de gato`,
-	        `Mosquis, un sexteto cervecil`,
+	        `Me acabo de encontrar un sexteto cervecil`,
 	        `Los finales felices son historias sin acabar`,
 	        `Me estoy comiendo una hamburguesa... mmmm, deliciosa, es como el sexo, salvo que ésta está a mi alcance`,
 	        `Malditos hippies`,
@@ -162,29 +161,46 @@ function sendRandomFunnyQuote(message) {
 	        `¡ GIlÍIIIIIIIII !`,
 	        `En 1992, estuve en una fiesta en la casa de Michael Douglas y me follé a Kim Basinger`,
 	        `¿ Has visto a ese gilí ?`,
-	        `Voy a poner mi propio servidor de Discord, con casinos y furcias. Es más, paso del casino`,
 	        `Los pelirrojos no tienen alma`,
 	        `Para mentir hace falta 2 personas, una que mienta y otra que escuche`,
 	        `Núcelar, la palabra es núcelar`,
-	        `¡ Eres el monstruo más feo jamás creado !`,
 	        `Joe, vaya ñordo acabo de echar`,
 	        `Soy capaz de absorver 2 litros de agua por vía anal de un sólo golpe... Eso lo hace muy poca gente`,
 	        `Creo que hoy toca siesta de 3 horas`,
 	        `¿ Alguien sabe dónde se celebrará este año el festival de Cannes ?`,
 	        `¡ Por favor, no me comáis ! Tengo mujer e hijos... ¡ Comedlos a ellos !`,
-	        ``,
+	        `Acuéstate y suda`,
 	        `A diferencia del amor, el respeto no se compra`,
-	        ``,
-	        ``,
-	        ``,
-	        `! Quiero mi bocadillo !`,
-	        ``,
-	        ``,
+	        `Lo veo negro, jodídamente negro`,
+	        `:eyes: :eyes:`,
+	        `<:cro:483747544409702416>`,
+	        `<:chema:481897732718723073>`,
+	        `Es tarde, creo que es hora de ir adolfmir <:adolf:481536128680198167>`,
+	        `Chema for president <:chema:481897732718723073>`,
+	        `Veo un cierto parecido entre Chema <:chema:481897732718723073> y Adolfito <:adolf:481536128680198167>`,
+	        `¡ Hey mamma ! <:heman:481536130186215424>`,
 	        `Cállate, cerebro. Ahora tengo amigos, ya no te necesito`,
-	        ``,
+	        `Hola @onirbos <:cli:481898601115549696>`,
+	        `<:areyoukiddingme:481536128915079168>`,
+	        `<:aliensguy:481536128810352651>`,
+	        `<:all_the_things:481536129225588747>`,
+	        `<:take_my_money:481536129091502083>`,
+	        `<:great_scott:481536129448017921>`,
+	        `<:heman:481536130186215424><:heman:481536130186215424><:heman:481536130186215424> Soy un trolashooooooooooooooooo <:heman:481536130186215424><:heman:481536130186215424><:heman:481536130186215424>`,
+	        `Vuelvo en 5 minutos <:fleshlight:481536129279983636>`,
+	        `ufff <:facepalm:481536129242365973>`,
+	        `<:successkid:481536130685337603>`,
+	        `<:dickbutt:481536129091371009>`,
+	        `<:nin:481877570011267073> Hey mamma !`,
+	        `En realidad no soy un bot, ¿ lo sabíais ? <:aliensguy:481536128810352651>`,
+	        `<:monkeyjesus:481536130035220501> Ay par favar`,
+	        `<:troll:481536129074462732>`,
+	        `<:mr_mackey:481536129514864642> ¿ Sabeeees ?`,
+	        `<:trap:481536129787756545> It's a trap <:trap:481536129787756545>`,
+	        `<:heres_johnny:481536130622160900>`,
 	        `Ahora con Internet los niños se crían solos`,
-	        ``,
-	        ``,
+	        `Cuidado si Trillo te da de beber una infusión, ¡ CORRE !`,
+	        `Oh, cagué, cagué`,
 	        `Voy a verme una peli, ¿ me recomendáis alguna ?`,
 	        `Por el alcohol, causa y también solución de todos los problemas de la vida`,
 	        `Comparad vuestras vidas con la mía… y luego podéis suicidaros`,
@@ -196,36 +212,13 @@ function sendRandomFunnyQuote(message) {
 	message.channel.send(response);
 }
 
-/*
-client.on("ready", () => {
-  // This event will run if the bot starts, and logs in, successfully.
-  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
-  // Example of changing the bot's playing game to something useful. `client.user` is what the
-  // docs refer to as the "ClientUser".
-  client.user.setActivity(`Serving ${client.guilds.size} servers`);
-});
-
-client.on("guildCreate", guild => {
-  // This event triggers when the bot joins a guild.
-  console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-  client.user.setActivity(`Serving ${client.guilds.size} servers`);
-});
-
-client.on("guildDelete", guild => {
-  // this event triggers when the bot is removed from a guild.
-  console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-  client.user.setActivity(`Serving ${client.guilds.size} servers`);
-});
-
-*/
-
 client.once('ready', () => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
 	console.log(' ------------------------------');
-	console.log('        Croke is ready!');
+	console.log('        Bot is ready!');
 	console.log(' ------------------------------');
 	console.log(' ');
 	console.log(' ');
@@ -239,23 +232,15 @@ client.on("message", function(message) {
 	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
   
-	if (message.content.startsWith(config.prefix)) {
+	if (message.content.startsWith("!")) {
 		if (command === "ping") {
-			//const m = await message.channel.send("Ping?");
-			//m.edit(`Pong! Latencia: ${m.createdTimestamp - message.createdTimestamp}ms. Latencia API: ${Math.round(client.ping)}ms`);
-
-			// send back "Pong." to the channel the message was sent in
 			const timeTaken = Date.now() - message.createdTimestamp;
-			message.reply(`Pong! This message had a latency of ${timeTaken}ms.`);
+			message.reply(`Pong! Este mensaje tiene una latencia de ${timeTaken} ms.`);
 		}	
 
 		if(command === "say") {
-			// makes the bot say something and delete the message. As an example, it's open to anyone to use. 
-			// To get the "message" itself we join the `args` back into a string with spaces: 
 			const sayMessage = args.join(" ");
-			// Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
 			message.delete().catch(O_o=>{ hi}); 
-			// And we get the bot to say the thing: 
 			message.channel.send(sayMessage);
 		}		
 	} else {

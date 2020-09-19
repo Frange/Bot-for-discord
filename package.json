@@ -1,0 +1,10 @@
+{
+  "name": "putocroke-bot",
+  "version": "1.0.0",
+  "description": "Mi primer bot de Discord",
+  "main": "bot.js",
+  "author": "Frange",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  }
+}
