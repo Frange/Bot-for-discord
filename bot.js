@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 const { readdirSync } = require("fs");
 const { sep } = require("path");
-
+/*
 const FALL = 'fall';
 const GUY = 'guy';
 const FALL_GUYS = 'fall guys';
@@ -272,5 +272,26 @@ client.on("message", function(message) {
 		}
 	}
 });
+
+*/
+
+
+client.once('ready', () => {
+	console.log(' ');
+	console.log(' ');
+	console.log(' ');
+	console.log(' ');
+	console.log(' ------------------------------');
+	console.log('        Bot is ready!');
+	console.log(' ------------------------------');
+	console.log(' ');
+	console.log(' ');
+	console.log(' ');
+	console.log(' ');
+});
+
+client.on("message", function(message) {
+	message.reply('Mensaje léído');
+}
 
 client.login(process.env.TOKEN);
