@@ -291,7 +291,7 @@ client.once('ready', () => {
 });
 
 client.on("message", function(message) {
-	message.reply('Mensaje léído');
+	//message.reply('Mensaje leído');
 });
 
 client.login(process.env.TOKEN);
