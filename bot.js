@@ -224,9 +224,11 @@ client.once('ready', () => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
+	message.reply('Bot iniciado');
 });
 
 client.on("message", function(message) {
+	message.reply('Mensaje léído');
 	if (message.author.bot) return;
 
 	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
