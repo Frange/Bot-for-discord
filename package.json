@@ -1,13 +1,19 @@
 {
-  "name": "putocroke-bot",
+  "name": "el-trolasho-bot",
   "version": "1.0.0",
   "description": "Mi primer bot de Discord",
-  "author": "Frange",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
+  "keywords": [],
+  "author": "Frange",
+  "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.3.1"
+    "discord.js": "^12.3.1",
+    "eslint": "^7.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
