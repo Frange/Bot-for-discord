@@ -1,7 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const funnyQuotes = require('./funnyQuotes.js');
+const ROL_FRANGE = '308564113431461888';
+const ROL_GAYOLO = '753022904618319962';
+
+const COMMAND_SAY = 's';
+const COMMAND_HELP = 'h';
 
 //const { readdirSync } = require("fs");
 //const { sep } = require("path");
@@ -293,13 +297,30 @@ client.once('ready', () => {
 });
 
 client.on("message", function(message) {
-	if (message.author.bot) {
-		return;
-	}
+	if (message.author.bot) return;
 
+	if (!message.content.startsWith(process.env.PREFIX)) {
+		return;
+	} else {
+		if (!message.member.roles.has(ROL_GAYOLO)) return;
+		switch (command){
+			case COMMAND_HELP: {
+				message.channel.send("Comandos disponibles:");
+				message.channel.send("- 'h'elp: Muestra la lista de comandos.");
+				message.channel.send("- 's'ay: Hace hablar al trolasho con el texto que le pongas.");
+				break;
+			}
+			case COMMAND_SAY: {
+				const sayMessage = args.join(" ");
+				message.delete().catch(O_o=>{ hi}); 
+				message.channel.send(sayMessage);
+				break;
+			}
+		}
+	}
 	//var probability = Math.floor((Math.random() * 6) + 1);
 	//if (probability == 1) {
-		sendRandomFunnyQuote(message);
+	//	sendRandomFunnyQuote(message);
 	//}
 });
 
