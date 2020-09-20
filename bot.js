@@ -300,9 +300,17 @@ client.on("message", function(message) {
 	if (message.author.bot) return;
 
 	if (!message.content.startsWith(process.env.PREFIX)) {
+		//var probability = Math.floor((Math.random() * 6) + 1);
+		//if (probability == 1) {
+		//	sendRandomFunnyQuote(message);
+		//}
 		return;
 	} else {
 		if (!message.member.roles.cache.has(ROL_GAYOLO)) return;
+
+		const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
+		const command = args.shift().toLowerCase();
+
 		switch (command){
 			case COMMAND_HELP: {
 				const embed = new MessageEmbed()
@@ -322,10 +330,6 @@ client.on("message", function(message) {
 			}
 		}
 	}
-	//var probability = Math.floor((Math.random() * 6) + 1);
-	//if (probability == 1) {
-	//	sendRandomFunnyQuote(message);
-	//}
 });
 
 client.login(process.env.TOKEN);
