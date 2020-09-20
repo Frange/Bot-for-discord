@@ -315,7 +315,6 @@ const applyText = (canvas, text) => {
 
 client.on('guildMemberAdd', async member => {
 	const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
-	channel.send(`¡ Bienvenido a Gayolada !, ${channel}!`);
 	if (!channel) return;
 
 	const canvas = Canvas.createCanvas(700, 250);
@@ -381,7 +380,7 @@ client.on("message", function(message) {
 				break;
 			}
 			case COMMAND_CLEAR: {
-				message.channel.bulkDelete(1);
+				message.channel.bulkDelete(500);
 				//message.channel.send("Limpieza de Sable!!").then(msg => msg.delete({timeout: 60000}));
 			}
 			case COMMAND_JOIN: {
