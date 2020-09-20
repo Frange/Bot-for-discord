@@ -315,7 +315,7 @@ const applyText = (canvas, text) => {
 
 client.on('guildMemberAdd', async member => {
 	console.log(`Join: 1`);
-	const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
+	const channel = member.guild.channels.cache.find(ch => ch.name === 'testing-bots');
 
 	console.log(`Join: 2`);
 	if (!channel) return;
@@ -376,6 +376,7 @@ client.on("message", function(message) {
 		const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
 		const command = args.shift().toLowerCase();
 
+		console.log(`Comando: ${message.member} - Usuario: ${message.member}`);
 		switch (command){
 			case COMMAND_HELP: {
 				const embed = new MessageEmbed()
@@ -402,7 +403,6 @@ client.on("message", function(message) {
 				//message.channel.send("Limpieza de Sable!!").then(msg => msg.delete({timeout: 60000}));
 			}
 			case COMMAND_JOIN: {
-				console.log(`Join: ${message.member}`);
 				client.emit('guildMemberAdd', message.member);
 			}
 		}
