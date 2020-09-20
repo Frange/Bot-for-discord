@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const funnyQuotes = require('../funnyQuotes.js');
+const funnyQuotes = require('./funnyQuotes.js');
 
 //const { readdirSync } = require("fs");
 //const { sep } = require("path");
