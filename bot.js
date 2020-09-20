@@ -302,7 +302,7 @@ client.on("message", function(message) {
 	if (!message.content.startsWith(process.env.PREFIX)) {
 		return;
 	} else {
-		if (!message.member.roles.has(ROL_GAYOLO)) return;
+		if (!message.member.roles.cache.has(ROL_GAYOLO)) return;
 		switch (command){
 			case COMMAND_HELP: {
 				message.channel.send("Comandos disponibles:");
