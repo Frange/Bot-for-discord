@@ -31,9 +31,7 @@ client.once('ready', () => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
-	const channels = client.channels.cache.get(CHANNEL_TESTING_BOTS);
-	// const channel = client.channels.cache.get(CHANNEL_TESTING_BOTS);
-	console.log(`Comando: ${channels}`);
+	const channel = member.guild.channels.cache.find(ch => ch.name === 'testing-bots');
 	channel.sendMessage('¡ Ya estoy de vuelta !');
 });
 
