@@ -31,7 +31,7 @@ client.once('ready', () => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
-	const channel = client.channels.get(CHANNEL_TESTING_BOTS);
+	const channel = client.channels.cache.get(CHANNEL_TESTING_BOTS);
 	channel.sendMessage('¡ Ya estoy de vuelta !');
 });
 
