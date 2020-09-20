@@ -33,8 +33,7 @@ client.once('ready', () => {
 	console.log(' ');
 	client.channels.cache
 		.find(channel => channel.id === CHANNEL_TESTING_BOTS)
-		.send('¡ He vuelto !')
-		.then(msg => msg.delete({ timeout: 60000 }));
+		.send('¡ He vuelto !');
 });
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
