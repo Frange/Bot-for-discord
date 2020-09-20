@@ -313,6 +313,7 @@ const applyText = (canvas, text) => {
 
 client.on('guildMemberAdd', async member => {
 	const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
+	channel.send(`¡ Bienvenido a Gayolada !, ${channel}!`);
 	if (!channel) return;
 
 	const canvas = Canvas.createCanvas(700, 250);
@@ -342,7 +343,7 @@ client.on('guildMemberAdd', async member => {
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
-	channel.send(`Welcome to the server, ${member}!`, attachment);
+	channel.send(`¡ Bienvenido a Gayolada !, ${member}!`, attachment);
 });
 
 client.on("message", function(message) {
@@ -365,9 +366,9 @@ client.on("message", function(message) {
 				const embed = new MessageEmbed()
 				.setTitle('Ayuda General del Bot')
 				.setColor(0xff0000)
-				//.setDescription("Listado con los comandos disponibles.")
+				//.setDescription("-------------------------------------------")
 				.addField("!h -> HELP", "Muestra la lista de comandos.")
-				.addField("!s ->", "Hace hablar a El trolasho con el texto que le pongas.");
+				.addField("!s -> SAY", "Hace hablar a El trolasho con el texto que le pongas.");
     			message.channel.send(embed);
 				break;
 			}
@@ -376,6 +377,10 @@ client.on("message", function(message) {
 				message.delete().catch(O_o=>{ hi}); 
 				message.channel.send(sayMessage);
 				break;
+			}
+			case COMMAND_CLEAR: {
+				message.channel.bulkDelete(1);
+				//message.channel.send("Limpieza de Sable!!").then(msg => msg.delete({timeout: 60000}));
 			}
 			case COMMAND_JOIN: {
 				client.emit('guildMemberAdd', message.member);
