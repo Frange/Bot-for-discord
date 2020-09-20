@@ -34,7 +34,7 @@ client.once('ready', () => {
 	client.channels.cache
 		.find(channel => channel.id === CHANNEL_TESTING_BOTS)
 		.send('¡ He vuelto !')
-		.then(msg => msg.delete({ timeout: 30000 }));
+		.then(msg => msg.delete({ timeout: 60000 }));
 });
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -45,7 +45,7 @@ for (const file of commandFiles) {
 
 const applyText = (canvas, text) => {
 	const ctx = canvas.getContext('2d');
-	let fontSize = 70;
+	let fontSize = 80;
 
 	do {
 		ctx.font = `${fontSize -= 10}px sans-serif`;
@@ -73,7 +73,7 @@ client.on('guildMemberAdd', async member => {
 
 	ctx.font = applyText(canvas, `${member.displayName}!`);
 	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`${member.displayName}`, canvas.width / 2.5, canvas.height / 1.8);
+	ctx.fillText(`${member.displayName}`, canvas.width / 2.5, canvas.height / 1.4);
 
 	ctx.beginPath();
 	ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
