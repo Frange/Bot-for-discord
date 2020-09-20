@@ -5,6 +5,7 @@ const MessageEmbed = require('discord.js');
 const Canvas = require('canvas');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
+const { promisify } = require('util');
 const readdir = promisify(require('fs').readdir);
 
 // const ROL_FRANGE = '308564113431461888';
