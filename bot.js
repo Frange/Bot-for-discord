@@ -345,7 +345,6 @@ client.on('guildMemberAdd', async member => {
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
 	channel.send(`¡ Bienvenido a Gayolada !, ${member}!`, attachment);
-	*/
 });
 
 client.on("message", function(message) {
