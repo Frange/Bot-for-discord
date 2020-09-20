@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
 /* eslint-disable indent */
-const fs = require('fs');
 const Discord = require('discord.js');
 const MessageEmbed = require('discord.js');
 const Canvas = require('canvas');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
+const readdir = promisify(require('fs').readdir);
 
 // const ROL_FRANGE = '308564113431461888';
 const ROL_GAYOLO = '753022904618319962';
