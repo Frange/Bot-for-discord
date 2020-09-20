@@ -130,10 +130,6 @@ client.on('message', function(message) {
 				// message.channel.send("Limpieza de Sable!!").then(msg => msg.delete({timeout: 60000}));
 				break;
 			}
-			case COMMAND_PING: {
-				client.commands.get('ping').execute(message, args);
-				break;
-			}
 			case COMMAND_JOIN: {
 				message.delete();
 				client.emit('guildMemberAdd', message.member);
