@@ -178,11 +178,12 @@ const init = async () => {
 	*/
 	console.log(' 1');
 	// Here we login the client.
-	client.login(process.env.TOKEN);
 	console.log(' 2');
 
 // End top-level async/await function.
 };
 
-init();
+// init();
 
+
+client.login(process.env.TOKEN);
