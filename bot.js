@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const funnyQuotes = require('./funnyQuotes.js');
+const funnyQuotes = require('../funnyQuotes.js');
 
 //const { readdirSync } = require("fs");
 //const { sep } = require("path");
@@ -297,10 +297,10 @@ client.on("message", function(message) {
 		return;
 	}
 
-	var probability = Math.floor((Math.random() * 6) + 1);
-	if (probability == 1) {
+	//var probability = Math.floor((Math.random() * 6) + 1);
+	//if (probability == 1) {
 		sendRandomFunnyQuote(message);
-	}
+	//}
 });
 
 client.login(process.env.TOKEN);
