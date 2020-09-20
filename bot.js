@@ -15,7 +15,7 @@ const COMMAND_HELP = 'h';
 const COMMAND_CLEAR = 'c';
 const COMMAND_JOIN = 'j';
 
-client.once('ready', async member => {
+client.once('ready', () => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
@@ -27,12 +27,17 @@ client.once('ready', async member => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
-	console.log(' ${member}');
-	const channel = member.guild.channels.cache.find(ch => ch.name === 'testing-bots');
-	if (!channel) return;
-	channel.send(`¡ Ya estoy de vuelta !, ${member}`, attachment);
+	const guild = client.guilds.get('guildid');
+    if(guild && guild.channels.get('channelid')) {
+        guild.channels.get('channelid').send('¡ Ya estoy de vuelta !');
+	}
 });
 
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	client.commands.set(command.name, command);
+}
 
 const applyText = (canvas, text) => {
 	const ctx = canvas.getContext('2d');
