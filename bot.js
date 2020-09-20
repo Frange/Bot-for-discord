@@ -302,6 +302,7 @@ client.once('ready', async member => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
+	console.log(' ${member}');
 	const channel = member.guild.channels.cache.find(ch => ch.name === 'testing-bots');
 	if (!channel) return;
 	channel.send(`¡ Ya estoy de vuelta !, ${member}`, attachment);
