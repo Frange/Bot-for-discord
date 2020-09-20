@@ -3,7 +3,8 @@
 const Discord = require('discord.js');
 const MessageEmbed = require('discord.js');
 const Canvas = require('canvas');
-const client = new Discord.Client();
+// const client = new Discord.Client();
+const client = new Discord.Client({ ws: { intents: Discord.Intents.ALL } });
 client.commands = new Discord.Collection();
 const { promisify } = require('util');
 const fs = require('fs');
