@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const { Discord, MessageEmbed } = require('discord.js');
 const client = new Discord.Client();
 
 const ROL_FRANGE = '308564113431461888';
