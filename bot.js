@@ -317,6 +317,13 @@ client.on('guildMemberAdd', async member => {
 	const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
 	if (!channel) return;
 
+
+	const canvas = Canvas.createCanvas(700, 250);
+	const ctx = canvas.getContext('2d');
+
+	channel.send(`¡ Bienvenido a Gayolada !, ${member}!`);
+
+	/*
 	const canvas = Canvas.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
 
@@ -345,6 +352,7 @@ client.on('guildMemberAdd', async member => {
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
 	channel.send(`¡ Bienvenido a Gayolada !, ${member}!`, attachment);
+	*/
 });
 
 client.on("message", function(message) {
@@ -380,7 +388,11 @@ client.on("message", function(message) {
 				break;
 			}
 			case COMMAND_CLEAR: {
-				message.channel.bulkDelete(500);
+				message.channel.bulkDelete(100);
+				message.channel.bulkDelete(100);
+				message.channel.bulkDelete(100);
+				message.channel.bulkDelete(100);
+				message.channel.bulkDelete(100);
 				//message.channel.send("Limpieza de Sable!!").then(msg => msg.delete({timeout: 60000}));
 			}
 			case COMMAND_JOIN: {
