@@ -344,7 +344,7 @@ client.on('guildMemberAdd', async member => {
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
-	channel.send(`¡ Bienvenido a Gayolada !, ${member}!`, attachment);
+	channel.send(`¡ Bienvenido a Gayolada !, ${member}`, attachment);
 });
 
 client.on("message", function(message) {
@@ -376,7 +376,6 @@ client.on("message", function(message) {
 			}
 			case COMMAND_SAY: {
 				const sayMessage = args.join(" ");
-				message.delete().catch(O_o=>{ hi}); 
 				message.channel.send(sayMessage);
 				break;
 			}
@@ -392,6 +391,8 @@ client.on("message", function(message) {
 				client.emit('guildMemberAdd', message.member);
 			}
 		}
+
+        message.delete().catch(O_o=>{ hi}); 
 	}
 });
 
