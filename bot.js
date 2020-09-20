@@ -8,7 +8,9 @@ const ROL_GAYOLO = "753022904618319962";
 
 const COMMAND_SAY = "s";
 const COMMAND_HELP = "h";
-const COMMAND_JOIN = "j"
+const COMMAND_CLEAR = "c";
+const COMMAND_JOIN = "j";
+
 
 //const { readdirSync } = require("fs");
 //const { sep } = require("path");
