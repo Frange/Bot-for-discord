@@ -145,7 +145,7 @@ client.on('message', function(message) {
 const init = async () => {
 	console.log(' HOLA');
 	const cmdFiles = await readdir('./commands/');
-	client.logger.log(`Cargando comandos: ${cmdFiles.length} commands.`);
+	console.log(`Cargando comandos: ${cmdFiles.length} commands.`);
 	cmdFiles.forEach(f => {
 		if (!f.endsWith('.js')) return;
 		const response = client.loadCommand(f);
@@ -155,10 +155,10 @@ const init = async () => {
 	console.log('ADIOS');
 	/*
 	const evtFiles = await readdir('./events/');
-	client.logger.log(`Loading a total of ${evtFiles.length} events.`);
+	console.log(`Loading a total of ${evtFiles.length} events.`);
 	evtFiles.forEach(file => {
 	const eventName = file.split('.')[0];
-	client.logger.log(`Loading Event: ${eventName}`);
+	console.log(`Loading Event: ${eventName}`);
 	const event = require(`./events/${file}`);
 	// Bind the client to any event, before the existing arguments
 	// provided by the discord.js event.
