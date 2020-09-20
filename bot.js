@@ -54,7 +54,7 @@ const applyText = (canvas, text) => {
 };
 
 client.on('guildMemberAdd', async member => {
-	const channel = member.guild.channels.cache.find(ch => ch.name === 'testing-bots');
+	const channel = member.guild.channels.cache.find(ch => ch.name === 'bienvenida');
 	if (!channel) return;
 
 	const canvas = Canvas.createCanvas(700, 250);
