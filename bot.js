@@ -314,15 +314,21 @@ const applyText = (canvas, text) => {
 };
 
 client.on('guildMemberAdd', async member => {
+	console.log(`Join: 1`);
 	const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
+
+	console.log(`Join: 2`);
 	if (!channel) return;
 
-
+	console.log(`Join: 3`);
 	const canvas = Canvas.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
 
+	console.log(`Join: 4`);
+
 	channel.send(`¡ Bienvenido a Gayolada !, ${member}!`);
 
+	console.log(`Join: 5`);
 	/*
 	const canvas = Canvas.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
@@ -396,6 +402,7 @@ client.on("message", function(message) {
 				//message.channel.send("Limpieza de Sable!!").then(msg => msg.delete({timeout: 60000}));
 			}
 			case COMMAND_JOIN: {
+				console.log(`Join: ${message.member}`);
 				client.emit('guildMemberAdd', message.member);
 			}
 		}
