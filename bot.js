@@ -19,7 +19,7 @@ const COMMAND_HELP = 'h';
 const COMMAND_CLEAR = 'c';
 const COMMAND_JOIN = 'j';
 
-client.once('ready', () => {
+client.once('ready', async member => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
