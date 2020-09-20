@@ -28,7 +28,7 @@ client.once('ready', () => {
 	console.log(' ');
 	console.log(' ');
 	const guild = client.guilds.get('guildid');
-    if(guild && guild.channels.get('channelid')) {
+    if (guild && guild.channels.get('channelid')) {
         guild.channels.get('channelid').send('¡ Ya estoy de vuelta !');
 	}
 });
@@ -141,14 +141,16 @@ client.on('message', function(message) {
 });
 
 const init = async () => {
+	console.log(' HOLA');
 	const cmdFiles = await readdir('./commands/');
-	client.logger.log(`Loading a total of ${cmdFiles.length} commands.`);
+	client.logger.log(`Cargando comandos: ${cmdFiles.length} commands.`);
 	cmdFiles.forEach(f => {
-	if (!f.endsWith('.js')) return;
-	const response = client.loadCommand(f);
-	if (response) console.log(response);
+		if (!f.endsWith('.js')) return;
+		const response = client.loadCommand(f);
+		if (response) console.log(response);
 	});
 
+	console.log('ADIOS');
 	/*
 	const evtFiles = await readdir('./events/');
 	client.logger.log(`Loading a total of ${evtFiles.length} events.`);
@@ -170,8 +172,10 @@ const init = async () => {
 		client.levelCache[thisLevel.name] = thisLevel.level;
 	}
 
+	console.log(' 1');
 	// Here we login the client.
 	client.login(process.env.TOKEN);
+	console.log(' 2');
 
 // End top-level async/await function.
 };
