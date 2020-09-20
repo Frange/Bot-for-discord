@@ -21,7 +21,7 @@ const COMMAND_JOIN = 'j';
 
 client.on('ready', () => {
 	console.log('Bot is now connected');
-	client.channels.cache.find(channel => channel.id === CHANNEL_TESTING_BOTS).send("Hello there!");
+	client.channels.cache.find(channel => channel.id === CHANNEL_TESTING_BOTS).send('¡ He vuelto !');
 });
 
 client.once('ready', () => {
@@ -36,6 +36,7 @@ client.once('ready', () => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
+	client.channels.cache.find(channel => channel.id === CHANNEL_TESTING_BOTS).send('¡ He vuelto !').then(msg => msg.delete({ timeout: 30000 }));
 });
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -105,7 +106,7 @@ client.on('message', function(message) {
 		const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
 		const command = args.shift().toLowerCase();
 
-		console.log(`Comando: ${message.member} - Usuario: ${message.member}`);
+		console.log(`Usuario: ${message.member}`);
 		switch (command) {
 			case COMMAND_HELP: {
 				const embed = new MessageEmbed()
