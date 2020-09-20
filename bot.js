@@ -31,7 +31,8 @@ client.once('ready', () => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
-	client.sendMessage(CHANNEL_TESTING_BOTS, '¡ Ya estoy de vuelta !');
+	const channel = client.channels.get(CHANNEL_TESTING_BOTS);
+	channel.sendMessage('¡ Ya estoy de vuelta !');
 });
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
