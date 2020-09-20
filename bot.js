@@ -1,7 +1,9 @@
+const fs = require('fs');
 const Discord = require("discord.js");
 const { Client, MessageEmbed } = require('discord.js');
-const client = new Discord.Client();
 const Canvas = require('canvas');
+const client = new Discord.Client();
+client.commands = new Discord.Collection();
 
 const ROL_FRANGE = "308564113431461888";
 const ROL_GAYOLO = "753022904618319962";
@@ -328,7 +330,7 @@ client.on('guildMemberAdd', async member => {
 
 	ctx.font = '27px sans-serif';
 	ctx.fillStyle = '#ffffff';
-	ctx.fillText('¡ Bienvenido a Gayolada !,', canvas.width / 2.5, canvas.height / 3.5);
+	ctx.fillText('¡ Bienvenido a Gayolada !', canvas.width / 2.5, canvas.height / 3.5);
 
 	ctx.font = applyText(canvas, `${member.displayName}!`);
 	ctx.fillStyle = '#ffffff';
