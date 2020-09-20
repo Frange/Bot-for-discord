@@ -1,21 +1,22 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+/* eslint-disable indent */
 const fs = require('fs');
-const Discord = require("discord.js");
-const { Client, MessageEmbed } = require('discord.js');
+const Discord = require('discord.js');
+const MessageEmbed = require('discord.js');
 const Canvas = require('canvas');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
-const ROL_FRANGE = "308564113431461888";
-const ROL_GAYOLO = "753022904618319962";
+const ROL_FRANGE = '308564113431461888';
+const ROL_GAYOLO = '753022904618319962';
 
-const COMMAND_SAY = "s";
-const COMMAND_HELP = "h";
-const COMMAND_CLEAR = "c";
-const COMMAND_JOIN = "j";
+const COMMAND_SAY = 's';
+const COMMAND_HELP = 'h';
+const COMMAND_CLEAR = 'c';
+const COMMAND_JOIN = 'j';
 
 
-//const { readdirSync } = require("fs");
-//const { sep } = require("path");
 /*
 const FALL = 'fall';
 const GUY = 'guy';
@@ -29,7 +30,7 @@ global.__basedir = __dirname;
 let prefix = process.env.PREFIX;
 
 function hasCroke(message) {
-	if (message.toLowerCase().includes('croke') || 
+	if (message.toLowerCase().includes('croke') ||
 		message.toLowerCase().includes('cro') ||
 		message.toLowerCase().includes('jorgito') ||
 		message.toLowerCase().includes('george') ||
@@ -245,18 +246,18 @@ client.on("message", function(message) {
 
 	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
-  
+
 	if (message.content.startsWith("!")) {
 		if (command === "ping") {
 			const timeTaken = Date.now() - message.createdTimestamp;
 			message.reply(`Pong! Este mensaje tiene una latencia de ${timeTaken} ms.`);
-		}	
+		}
 
 		if(command === "say") {
 			const sayMessage = args.join(" ");
-			message.delete().catch(O_o=>{ hi}); 
+			message.delete().catch(O_o=>{ hi});
 			message.channel.send(sayMessage);
-		}		
+		}
 	} else {
 		console.log(`Message: ${message.content}`);
 		if (hasCroke(message.content)) {
@@ -266,10 +267,10 @@ client.on("message", function(message) {
 				sendRandomCrokeQuote(message);
 			}
 		} else if (
-			message.content.toLowerCase().includes(FALL) || 
-			message.content.toLowerCase().includes(GUY) || 
-			message.content.toLowerCase().includes(AMONG) || 
-			message.content.toLowerCase().includes(AMONG_US) || 
+			message.content.toLowerCase().includes(FALL) ||
+			message.content.toLowerCase().includes(GUY) ||
+			message.content.toLowerCase().includes(AMONG) ||
+			message.content.toLowerCase().includes(AMONG_US) ||
 			message.content.toLowerCase().includes(MONGOS)) {
 			//var probability = Math.floor((Math.random() * 2) + 1);
 			//if (probability == 1) {
@@ -289,7 +290,7 @@ client.on("message", function(message) {
 */
 
 
-client.once('ready', () => {
+client.once('ready', async member => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
@@ -301,6 +302,9 @@ client.once('ready', () => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
+	const channel = member.guild.channels.cache.find(ch => ch.name === 'testing-bots');
+	if (!channel) return;
+	channel.send(`¡ Ya estoy de vuelta !, ${member}`, attachment);
 });
 
 
@@ -349,36 +353,37 @@ client.on('guildMemberAdd', async member => {
 	channel.send(`¡ Bienvenido a Gayolada !, ${member}`, attachment);
 });
 
-client.on("message", function(message) {
+client.on('message', function(message) {
 	if (message.author.bot) return;
 
 	if (!message.content.startsWith(process.env.PREFIX)) {
-		//var probability = Math.floor((Math.random() * 6) + 1);
-		//if (probability == 1) {
+		// var probability = Math.floor((Math.random() * 6) + 1);
+		// if (probability == 1) {
 		//	sendRandomFunnyQuote(message);
-		//}
+		// }
 		return;
-	} else {
+	}
+	else {
 		if (!message.member.roles.cache.has(ROL_GAYOLO)) return;
 
 		const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
 		const command = args.shift().toLowerCase();
 
 		console.log(`Comando: ${message.member} - Usuario: ${message.member}`);
-		switch (command){
+		switch (command) {
 			case COMMAND_HELP: {
 				const embed = new MessageEmbed()
-				.setTitle('Ayuda General del Bot')
-				.setColor(0xff0000)
-				//.setDescription("-------------------------------------------")
-				.addField("!h -> HELP", "Muestra la lista de comandos.")
-				.addField("!s -> SAY", "Hace hablar a El trolasho con el texto que le pongas.");
-    			message.channel.send(embed);
+					.setTitle('Ayuda General del Bot')
+					.setColor(0xff0000)
+					// .setDescription("-------------------------------------------")
+					.addField('!h -> HELP', 'Muestra la lista de comandos.')
+					.addField('!s -> SAY', 'Hace hablar a El trolasho con el texto que le pongas.');
+				message.channel.send(embed);
 				break;
 			}
 			case COMMAND_SAY: {
-				const sayMessage = args.join(" ");
-        		message.delete().catch(O_o=>{ hi}); 
+				const sayMessage = args.join(' ');
+				message.delete().catch(O_o=>{ hi;});
 				message.channel.send(sayMessage);
 				break;
 			}
@@ -388,10 +393,12 @@ client.on("message", function(message) {
 				message.channel.bulkDelete(100);
 				message.channel.bulkDelete(100);
 				message.channel.bulkDelete(100);
-				//message.channel.send("Limpieza de Sable!!").then(msg => msg.delete({timeout: 60000}));
+				// message.channel.send("Limpieza de Sable!!").then(msg => msg.delete({timeout: 60000}));
+				break;
 			}
 			case COMMAND_JOIN: {
 				client.emit('guildMemberAdd', message.member);
+				break;
 			}
 		}
 	}
