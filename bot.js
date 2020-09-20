@@ -19,7 +19,17 @@ const COMMAND_HELP = 'h';
 const COMMAND_CLEAR = 'c';
 const COMMAND_JOIN = 'j';
 
-client.once('ready', async member => {
+const channel_test = client.channels.get('id', CHANNEL_TESTING_BOTS);
+
+window.addEventListener('ready', function() {
+    channel_test.send('He vuelto');
+});
+
+window.addEventListener('onError', function(e) {
+    channel_test.send(e.error.message);
+});
+
+client.once('ready', () => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
@@ -31,8 +41,6 @@ client.once('ready', async member => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
-	const channel = member.guild.channels.cache.find(ch => ch.name === 'testing-bots');
-	channel.sendMessage('¡ Ya estoy de vuelta !');
 });
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
