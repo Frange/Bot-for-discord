@@ -146,11 +146,12 @@ client.on('message', function(message) {
 const init = async () => {
 	console.log(' HOLA');
 	const cmdFiles = await readdir('./commands/');
-	console.log(`Cargando comandos: ${cmdFiles.length} commands.`);
+	console.log(`Comandos disponibles: ${cmdFiles.length}`);
 	cmdFiles.forEach(f => {
 		if (!f.endsWith('.js')) return;
-		const response = client.loadCommand(f);
-		if (response) console.log(response);
+		console.log('Comando: !${f}');
+		// const response = client.loadCommand(f);
+		// if (response) console.log(response);
 	});
 
 	console.log('ADIOS');
