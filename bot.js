@@ -3,12 +3,11 @@
 const Discord = require('discord.js');
 const MessageEmbed = require('discord.js');
 const Canvas = require('canvas');
-// const client = new Discord.Client();
-const client = new Discord.Client({ ws: { intents: Discord.Intents.ALL } });
+const client = new Discord.Client();
 client.commands = new Discord.Collection();
-const { promisify } = require('util');
+// const { promisify } = require('util');
 const fs = require('fs');
-const readdir = promisify(require('fs').readdir);
+// const readdir = promisify(require('fs').readdir);
 
 // const ROL_FRANGE = '308564113431461888';
 const ROL_GAYOLO = '753022904618319962';
