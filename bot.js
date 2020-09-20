@@ -326,13 +326,13 @@ client.on('guildMemberAdd', async member => {
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-	ctx.font = '28px sans-serif';
+	ctx.font = '27px sans-serif';
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText('¡ Bienvenido a Gayolada !,', canvas.width / 2.5, canvas.height / 3.5);
 
 	ctx.font = applyText(canvas, `${member.displayName}!`);
 	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`${member.displayName}!`, canvas.width / 2.5, canvas.height / 1.8);
+	ctx.fillText(`${member.displayName}`, canvas.width / 2.5, canvas.height / 1.8);
 
 	ctx.beginPath();
 	ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
