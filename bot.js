@@ -314,22 +314,9 @@ const applyText = (canvas, text) => {
 };
 
 client.on('guildMemberAdd', async member => {
-	console.log(`Join: 1`);
 	const channel = member.guild.channels.cache.find(ch => ch.name === 'testing-bots');
-
-	console.log(`Join: 2`);
 	if (!channel) return;
 
-	console.log(`Join: 3`);
-	const canvas = Canvas.createCanvas(700, 250);
-	const ctx = canvas.getContext('2d');
-
-	console.log(`Join: 4`);
-
-	channel.send(`¡ Bienvenido a Gayolada !, ${member}!`);
-
-	console.log(`Join: 5`);
-	/*
 	const canvas = Canvas.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
 
