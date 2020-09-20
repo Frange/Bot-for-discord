@@ -12,6 +12,8 @@ const fs = require('fs');
 // const ROL_FRANGE = '308564113431461888';
 const ROL_GAYOLO = '753022904618319962';
 
+const CHANNEL_TESTING_BOTS = '753361148585312367';
+
 const COMMAND_SAY = 's';
 const COMMAND_HELP = 'h';
 const COMMAND_CLEAR = 'c';
@@ -29,10 +31,7 @@ client.once('ready', () => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
-	const guild = client.guilds.get('guildid');
-    if (guild && guild.channels.get('channelid')) {
-        guild.channels.get('channelid').send('¡ Ya estoy de vuelta !');
-	}
+	client.sendMessage(CHANNEL_TESTING_BOTS, '¡ Ya estoy de vuelta !');
 });
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
