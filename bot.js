@@ -305,9 +305,13 @@ client.on("message", function(message) {
 		if (!message.member.roles.cache.has(ROL_GAYOLO)) return;
 		switch (command){
 			case COMMAND_HELP: {
-				message.channel.send("Comandos disponibles:");
-				message.channel.send("- 'h'elp: Muestra la lista de comandos.");
-				message.channel.send("- 's'ay: Hace hablar al trolasho con el texto que le pongas.");
+				const embed = new MessageEmbed()
+				.setTitle('Ayuda General del Bot')
+				.setColor(0xff0000)
+				//.setDescription("Listado con los comandos disponibles.")
+				.addField("!h -> HELP", "Muestra la lista de comandos.")
+				.addField("!s ->", "Hace hablar a El trolasho con el texto que le pongas.");
+    			message.channel.send(embed);
 				break;
 			}
 			case COMMAND_SAY: {
