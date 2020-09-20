@@ -19,11 +19,6 @@ const COMMAND_HELP = 'h';
 const COMMAND_CLEAR = 'c';
 const COMMAND_JOIN = 'j';
 
-client.on('ready', () => {
-	console.log('Bot is now connected');
-	client.channels.cache.find(channel => channel.id === CHANNEL_TESTING_BOTS).send('¡ He vuelto !');
-});
-
 client.once('ready', () => {
 	console.log(' ');
 	console.log(' ');
@@ -36,7 +31,10 @@ client.once('ready', () => {
 	console.log(' ');
 	console.log(' ');
 	console.log(' ');
-	client.channels.cache.find(channel => channel.id === CHANNEL_TESTING_BOTS).send('¡ He vuelto !').then(msg => msg.delete({ timeout: 30000 }));
+	client.channels.cache
+		.find(channel => channel.id === CHANNEL_TESTING_BOTS)
+		.send('¡ He vuelto !')
+		.then(msg => msg.delete({ timeout: 30000 }));
 });
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
