@@ -19,14 +19,9 @@ const COMMAND_HELP = 'h';
 const COMMAND_CLEAR = 'c';
 const COMMAND_JOIN = 'j';
 
-const channel_test = client.channels.get('id', CHANNEL_TESTING_BOTS);
-
-window.addEventListener('ready', function() {
-    channel_test.send('He vuelto');
-});
-
-window.addEventListener('onError', function(e) {
-    channel_test.send(e.error.message);
+client.on('ready', () => {
+	console.log('Bot is now connected');
+	client.channels.cache.find(channel => channel.id === CHANNEL_TESTING_BOTS).send("Hello there!");
 });
 
 client.once('ready', () => {
