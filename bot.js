@@ -2,9 +2,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable indent */
 
-// const Discord = require('discord.js');
+ const Discord = require('discord.js');
 // const MessageEmbed = require('discord.js');
-const { Discord, MessageEmbed } = require('discord.js');
+const { Client, MessageEmbed } = require('discord.js');
 const Canvas = require('canvas');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
