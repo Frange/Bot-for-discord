@@ -58,7 +58,7 @@ client.on('message', function(message) {
 
 		console.log(`Usuario: ${message.member}`);
 		switch (command) {
-			case cons.COMMAND_HELP: {
+			case COMMAND_HELP: {
 				const embed = new MessageEmbed()
 					.setTitle('Ayuda General del Bot')
 					.setColor(0xff0000)
@@ -68,11 +68,11 @@ client.on('message', function(message) {
 				message.channel.send(embed);
 				break;
 			}
-			case cons.COMMAND_SAY: {
+			case COMMAND_SAY: {
 				cmd.say(message, args);
 				break;
 			}
-			case cons.COMMAND_CLEAR: {
+			case COMMAND_CLEAR: {
 				message.channel.bulkDelete(100);
 				message.channel.bulkDelete(100);
 				message.channel.bulkDelete(100);
@@ -81,7 +81,7 @@ client.on('message', function(message) {
 				// message.channel.send("Limpieza de Sable!!").then(msg => msg.delete({timeout: 60000}));
 				break;
 			}
-			case cons.COMMAND_JOIN: {
+			case COMMAND_JOIN: {
 				message.delete();
 				client.emit('guildMemberAdd', message.member);
 				break;
