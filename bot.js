@@ -30,7 +30,7 @@ const fooVariable = require('./fileA').varToExport;
 */
 
 client.once('ready', () => {
-	ready.fun(client, CHANNEL_TESTING_BOTS);
+	ready.fun(client);
 });
 
 client.on('voiceStateUpdate', (oldMember, newMember) => {
