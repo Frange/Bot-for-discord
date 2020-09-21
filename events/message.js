@@ -1,7 +1,6 @@
 /* eslint-disable indent */
 // const discord = require('discord.js');
 // const client = new discord.Client();
-
 const exported = require('./bot').exports;
 
 // const ROL_FRANGE = '308564113431461888';
@@ -25,7 +24,7 @@ module.exports = {
 			//	sendRandomFunnyQuote(message);
 			// }
 			return;
-		}
+        }
 		else {
 			if (!message.member.roles.cache.has(ROL_GAYOLO)) return;
 
