@@ -6,7 +6,7 @@ const exported = require('../bot').exports;
 const CHANNEL_TESTING_BOTS = '753361148585312367';
 
 module.exports = {
-	fun: function() {
+	fun: function(client) {
 		console.log(' ');
 		console.log(' ');
 		console.log(' ');
@@ -18,7 +18,7 @@ module.exports = {
 		console.log(' ');
 		console.log(' ');
 		console.log(' ');
-		exported.client.channels.cache
+		client.channels.cache
 			.find(channel => channel.id === CHANNEL_TESTING_BOTS)
 			.send('¡ He vuelto !');
 	},

@@ -31,15 +31,15 @@ const messageEvent = require('./events/message.js');
 module.exports = { client, fs, canvas, MessageEmbed, cmd };
 
 client.once('ready', () => {
-	readyEvent.fun();
+	readyEvent.fun(client);
 });
 
 client.on('voiceStateUpdate', (oldMember, newMember) => {
-	voiceStateUpdateEvent.fun(oldMember, newMember);
+	voiceStateUpdateEvent.fun(client, oldMember, newMember);
 });
 
 client.on('message', function(message) {
-	messageEvent.fun(message);
+	messageEvent.fun(client, message);
 });
 
 client.login(process.env.TOKEN);

@@ -14,7 +14,7 @@ const COMMAND_JOIN = 'j';
 // const CHANNEL_TESTING_BOTS = '753361148585312367';
 
 module.exports = {
-	fun: function(message) {
+	fun: function(client, message) {
 
 		if (message.author.bot) return;
 
@@ -58,7 +58,7 @@ module.exports = {
                 }
                 case COMMAND_JOIN: {
                     message.delete();
-                    exported.client.emit('guildMemberAdd', message.member);
+                    client.emit('guildMemberAdd', message.member);
                     break;
                 }
 			}
