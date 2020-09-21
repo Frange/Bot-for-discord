@@ -1,6 +1,7 @@
 /* eslint-disable brace-style */
 // const discord = require('discord.js');
 // const client = new discord.Client();
+//const exported = require('../bot.js').exports;
 
 module.exports = {
 	fun: function(oldMember, newMember) {

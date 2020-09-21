@@ -1,7 +1,7 @@
 // const discord = require('discord.js');
 // const client = new discord.Client();
 
-const exported = require('../bot').exports;
+const exported = require('../bot.js').exports;
 
 const CHANNEL_TESTING_BOTS = '753361148585312367';
 

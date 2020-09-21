@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 // const discord = require('discord.js');
 // const client = new discord.Client();
-const exported = require('../bot').exports;
+const exported = require('../bot.js').exports;
 
 // const ROL_FRANGE = '308564113431461888';
 const ROL_GAYOLO = '753022904618319962';
