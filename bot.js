@@ -13,8 +13,11 @@ const fs = require('fs');
 
 // INCLUDES
 const cmd = require('./commands/say.js');
-const rol = require('./roles.js');
+// const rol = require('./roles.js');
 // const cons = require('./constant.js');
+
+const ROL_FRANGE = '308564113431461888';
+const ROL_GAYOLO = '753022904618319962';
 
 const COMMAND_SAY = 's';
 const COMMAND_HELP = 'h';
@@ -51,7 +54,7 @@ client.on('message', function(message) {
 		return;
 	}
 	else {
-		if (!message.member.roles.cache.has(rol.ROL_GAYOLO)) return;
+		if (!message.member.roles.cache.has(ROL_GAYOLO)) return;
 
 		const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
 		const command = args.shift().toLowerCase();
