@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable indent */
 
@@ -13,7 +14,12 @@ const fs = require('fs');
 // INCLUDES
 const cmd = require('./commands/say.js');
 const rol = require('./roles.js');
-const cons = require('./constant.js');
+// const cons = require('./constant.js');
+
+const COMMAND_SAY = 's';
+const COMMAND_HELP = 'h';
+const COMMAND_CLEAR = 'c';
+const COMMAND_JOIN = 'j';
 
 const CHANNEL_TESTING_BOTS = '753361148585312367';
 
