@@ -14,7 +14,7 @@ const COMMAND_JOIN = 'j';
 // const CHANNEL_TESTING_BOTS = '753361148585312367';
 
 module.exports = {
-	fun: function(client, message) {
+	fun: function(message) {
 
 		if (message.author.bot) return;
 
@@ -34,7 +34,7 @@ module.exports = {
 			console.log(`Usuario: ${message.member}`);
 			switch (command) {
                 case COMMAND_HELP: {
-                    const embed = new exported.MessageEmbed()
+                    const embed = new exported.embed()
                         .setTitle('Ayuda General del Bot')
                         .setColor(0xff0000)
                         // .setDescription("-------------------------------------------")
@@ -58,7 +58,7 @@ module.exports = {
                 }
                 case COMMAND_JOIN: {
                     message.delete();
-                    client.emit('guildMemberAdd', message.member);
+                    exported.client.emit('guildMemberAdd', message.member);
                     break;
                 }
 			}

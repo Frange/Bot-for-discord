@@ -28,18 +28,18 @@ const voiceStateUpdateEvent = require('./events/voiceStateUpdate.js');
 const messageEvent = require('./events/message.js');
 
 // EXPORTS
-module.exports = { client, fs, canvas, MessageEmbed, cmd };
+module.exports = { client: client, fs: fs, canvas: canvas, embed: MessageEmbed, cmd: cmd };
 
 client.once('ready', () => {
-	readyEvent.fun(client);
+	readyEvent.fun();
 });
 
 client.on('voiceStateUpdate', (oldMember, newMember) => {
-	voiceStateUpdateEvent.fun(client, oldMember, newMember);
+	voiceStateUpdateEvent.fun(oldMember, newMember);
 });
 
 client.on('message', function(message) {
-	messageEvent.fun(client, message);
+	messageEvent.fun(message);
 });
 
 client.login(process.env.TOKEN);

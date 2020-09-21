@@ -1,10 +1,17 @@
+/* eslint-disable brace-style */
 // const discord = require('discord.js');
 // const client = new discord.Client();
 
 module.exports = {
-	fun: function(message, args) {
-		const sayMessage = args.join(' ');
-		message.delete();
-		message.channel.send(sayMessage);
+	fun: function(oldMember, newMember) {
+		const newUserChannel = newMember.voiceChannel;
+		const oldUserChannel = oldMember.voiceChannel;
+		if (oldUserChannel === undefined && newUserChannel !== undefined) {
+			// User Joins a voice channel
+			console.log('User Joins a voice channel');
+		} else if (newUserChannel === undefined) {
+			// User leaves a voice channel
+			console.log('User leaves a voice channel');
+		}
 	},
 };
