@@ -14,10 +14,11 @@ const fs = require('fs');
 const cmd = require('./commands/say.js');
 
 // EVENTS
-const ready = require('./events/ready.js');
-const voiceStateUpdate = require('./events/voiceStateUpdate.js');
+const readyEvent = require('./events/ready.js');
+const voiceStateUpdateEvent = require('./events/voiceStateUpdate.js');
+const messageEvent = require('./events/message.js');
 
-//EXPORTS
+// EXPORTS
 module.exports = { client, fs, canvas, MessageEmbed, cmd };
 
 /*
@@ -30,15 +31,15 @@ const fooVariable = require('./fileA').varToExport;
 */
 
 client.once('ready', () => {
-	ready.fun(client);
+	readyEvent.fun(client);
 });
 
 client.on('voiceStateUpdate', (oldMember, newMember) => {
-	voiceStateUpdate.fun(oldMember, newMember);
+	voiceStateUpdateEvent.fun(oldMember, newMember);
 });
 
 client.on('message', function(message) {
-	message.fun(client, message);
+	messageEvent.fun(client, message);
 });
 
 client.login(process.env.TOKEN);
