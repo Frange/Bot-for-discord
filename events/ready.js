@@ -1,10 +1,12 @@
 // const discord = require('discord.js');
 // const client = new discord.Client();
 
+const exported = require('../bot').exports;
+
 const CHANNEL_TESTING_BOTS = '753361148585312367';
 
 module.exports = {
-	fun: function(client) {
+	fun: function() {
 		console.log(' ');
 		console.log(' ');
 		console.log(' ');
@@ -16,7 +18,7 @@ module.exports = {
 		console.log(' ');
 		console.log(' ');
 		console.log(' ');
-		client.channels.cache
+		exported.client.channels.cache
 			.find(channel => channel.id === CHANNEL_TESTING_BOTS)
 			.send('¡ He vuelto !');
 	},
