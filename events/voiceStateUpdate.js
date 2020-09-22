@@ -41,7 +41,7 @@ module.exports = {
 			var channel = client.channels.cache.get(newState.channelID);
 			console.log(channel.name);
 
-			const message = `Hola ${userName}, bienvenido al char de voz de ${channelName}`;
+			const message = `Hola ${userName}, bienvenido al char de voz de ${channel}`;
 
 			if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
 				console.log(' ');
