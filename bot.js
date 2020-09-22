@@ -35,5 +35,3 @@ client.login(process.env.TOKEN);
 // EXPORTS
 module.exports = { client: client, fs: fs, canvas: canvas, embed: MessageEmbed, cmd: cmd };
 //module.exports = { client, fs, canvas, MessageEmbed, cmd };
-
-heroku
