@@ -1,12 +1,12 @@
 /* eslint-disable brace-style */
 // const discord = require('discord.js');
 // const client = new discord.Client();
-//const exported = require('../bot.js').exports;
+// const exported = require('../bot.js').exports;
 
-const { client, fs, canvas, MessageEmbed, cmd } = require('../bot.js');
+// const { client, fs, canvas, MessageEmbed, cmd } = require('../bot.js');
 
 module.exports = {
-	fun: function(oldMember, newMember) {
+	fun: function(client, oldMember, newMember) {
 		const newUserChannel = newMember.voiceChannel;
 		const oldUserChannel = oldMember.voiceChannel;
 		if (oldUserChannel === undefined && newUserChannel !== undefined) {

@@ -1,18 +1,4 @@
 /* eslint-disable indent */
-// const discord = require('discord.js');
-// const client = new discord.Client();
-
-/*
-// File A
-const fooVariable = 'foo';
-module.exports = { varToExport: fooVariable };
-
-// File B
-const fooVariable = require('./fileA').varToExport;
-*/
-
-// const exported = require('../bot.js').exports;
-// const { cmd } = require('../bot.js');
 
 // const ROL_FRANGE = '308564113431461888';
 const ROL_GAYOLO = '753022904618319962';

@@ -19,8 +19,13 @@ module.exports = {
 		console.log(' ');
 		console.log(' ');
 		console.log(` Exported: ${client.channels}`);
-		client.channels.cache
+		const user = client.users.cache.get('_TU ID USUARIO_');
+		user.send('El trolasho ha vuelto');
+
+		/*
+		 client.channels.cache
 			.find(channel => channel.id === CHANNEL_TESTING_BOTS)
 			.send('¡ He vuelto !');
+			*/
 	},
 };
