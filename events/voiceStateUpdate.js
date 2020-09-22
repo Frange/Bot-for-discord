@@ -7,8 +7,9 @@
 
 module.exports = {
 	fun: function(client, oldMember, newMember) {
-		const newUserChannel = newMember.voiceChannel;
-		const oldUserChannel = oldMember.voiceChannel;
+		let oldUserChannel = oldMember.guild.channels.cache.get(oldMember.voice.channelID);
+		let newUserChannel = newMember.guild.channels.cache.get(newMember.voice.channelID);
+	   
 		console.log('VoiceStateUpdate');
 		console.log(`newUserChannel: ${newUserChannel}`);
 		console.log(`oldUserChannel: ${oldUserChannel}`);
