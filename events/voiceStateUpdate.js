@@ -32,7 +32,7 @@ module.exports = {
 			var userName = client.users.cache.find((u) => u.id === newState.id).username;
 			var channel = client.channels.cache.get(newState.channelID);
 
-			const message = `@${userName} se ha conectado al chat de voz de ${channel}`;
+			const message = `@${userName} se ha conectado al chat de voz ${channel}`;
 
 			if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
 				console.log(' ');
