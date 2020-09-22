@@ -6,7 +6,7 @@
 const CHANNEL_TESTING_BOTS = '753361148585312367';
 
 module.exports = {
-	fun: function(client) {
+	fun: function (client) {
 		console.log(' ');
 		console.log(' ');
 		console.log(' ');

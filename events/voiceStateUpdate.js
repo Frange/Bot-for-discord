@@ -27,7 +27,7 @@ const VOICE_CHANNEL_AMONG_US = '753022620298903645';
 const CHANNEL_AMONG_US = '753022463155372193';
 
 module.exports = {
-	fun: function(client, oldState, newState) {
+	fun: function (client, oldState, newState) {
 		console.log('VoiceStateUpdate');
 		console.log(`channel: ${newState.channel}`); 		// <#[channelID]>
 		console.log(`channelID: ${newState.channelID}`);	// channelID
@@ -36,20 +36,20 @@ module.exports = {
 		console.log(`member: ${newState.member}`);			// <@[User id>
 
 		if (newState != null) {
-			var userName = client.users.cache.find((u) => u.id === newState.id).username; 
+			var userName = client.users.cache.find((u) => u.id === newState.id).username;
 			console.log(userName);
-			var channelName = client.channels.cache.get(newState.channelID); 
+			var channelName = client.channels.cache.get(newState.channelID);
 			console.log(channelName);
 
 			const message = `Hola ${userName}, bienvenido al char de voz de ${channelName}`;
-				
+
 			if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
 				console.log(' ');
 				console.log('Fall guys');
 
 				const canal = member.guild.channels.cache.find(ch => ch.id === CHANNEL_FALL_GUYS);
 				canal.send(message);
-				
+
 				/*
 				client.channels.cache
 					.find(channel => channel.id === CHANNEL_FALL_GUYS)
