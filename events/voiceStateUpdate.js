@@ -28,7 +28,7 @@ const CHANNEL_AMONG_US = '753022463155372193';
 
 module.exports = {
 	fun: function (client, oldState, newState) {
-		console.log('VoiceStateUpdate');
+		console.log('VoiceStateUpdate - ');
 		console.log(`channel: ${newState.channel}`); 		// <#[channelID]>
 		console.log(`channelID: ${newState.channelID}`);	// channelID
 		console.log(`guild: ${newState.guild}`); 			// Server name
@@ -41,12 +41,12 @@ module.exports = {
 			var channel = client.channels.cache.get(newState.channelID);
 			console.log(channel);
 
-			const message = `Hola ${userName}, bienvenido al char de voz de ${channel}`;
+			const message = `@${userName} se ha conectado al chat de voz de ${channel}`;
 
 			if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
 				console.log(' ');
 				console.log('Fall guys');
-				client.channels.cache.get(CHANNEL_AMONG_US).send(message);
+				client.channels.cache.get(CHANNEL_FALL_GUYS).send(message);
 			} else if (newState.channelID === VOICE_CHANNEL_AMONG_US) {
 				console.log(' ');
 				console.log('Among Us');
