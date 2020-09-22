@@ -32,6 +32,7 @@ client.on('message', function(message) {
 
 // EXPORTS
 //module.exports = { client: client, fs: fs, canvas: canvas, embed: MessageEmbed, cmd: cmd };
-module.exports = { client, fs, canvas, MessageEmbed, cmd };
+
 
 client.login(process.env.TOKEN);
+module.exports = { client, fs, canvas, MessageEmbed, cmd };
