@@ -20,7 +20,7 @@ const ROL_GAYOLO = '753022904618319962';
 const COMMAND_SAY = 's';
 const COMMAND_HELP = 'h';
 const COMMAND_CLEAR = 'c';
-const COMMAND_JOIN = 'j';
+// const COMMAND_JOIN = 'j';
 
 // const CHANNEL_TESTING_BOTS = '753361148585312367';
 
@@ -67,11 +67,13 @@ module.exports = {
                     // message.channel.send("Limpieza de Sable!!").then(msg => msg.delete({timeout: 60000}));
                     break;
                 }
+                /*
                 case COMMAND_JOIN: {
                     message.delete();
                     client.emit('guildMemberAdd', message.member);
                     break;
                 }
+                */
 			}
 		}
 	},
