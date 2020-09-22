@@ -10,6 +10,8 @@ module.exports = {
 		const newUserChannel = newMember.voiceChannel;
 		const oldUserChannel = oldMember.voiceChannel;
 		console.log('VoiceStateUpdate');
+		console.log(`newUserChannel: ${newUserChannel}`);
+		console.log(`oldUserChannel: ${oldUserChannel}`);
 		if (oldUserChannel === undefined && newUserChannel !== undefined) {
 			// User Joins a voice channel
 			console.log('User Joins a voice channel');

@@ -18,7 +18,6 @@ module.exports = {
 		console.log(' ');
 		console.log(' ');
 		console.log(' ');
-		console.log(` Exported: ${client.channels}`);
 		const user = client.users.cache.get('308564113431461888');
 		user.send('El trolasho ha vuelto');
 
