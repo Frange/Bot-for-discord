@@ -28,12 +28,6 @@ const CHANNEL_AMONG_US = '753022463155372193';
 
 module.exports = {
 	fun: function (client, oldState, newState) {
-		console.log(`channel: ${newState.channel}`); 		// <#[channelID]>
-		console.log(`channelID: ${newState.channelID}`);	// channelID
-		console.log(`guild: ${newState.guild}`); 			// Server name
-		console.log(`id: ${newState.id}`); 					// User id
-		console.log(`member: ${newState.member}`);			// <@[User id>
-
 		if (newState != null) {
 			var userName = client.users.cache.find((u) => u.id === newState.id).username;
 			console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${newState.guild}`);
