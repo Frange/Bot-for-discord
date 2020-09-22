@@ -11,7 +11,8 @@ module.exports = { varToExport: fooVariable };
 const fooVariable = require('./fileA').varToExport;
 */
 
-const exported = require('../bot.js').exports;
+//const exported = require('../bot.js').exports;
+const { client, fs, canvas, MessageEmbed, cmd } = require('../bot.js');
 
 // const ROL_FRANGE = '308564113431461888';
 const ROL_GAYOLO = '753022904618319962';
@@ -44,7 +45,7 @@ module.exports = {
 			console.log(`Usuario: ${message.member}`);
 			switch (command) {
                 case COMMAND_HELP: {
-                    const embed = new exported.embed()
+                    const embed = new MessageEmbed()
                         .setTitle('Ayuda General del Bot')
                         .setColor(0xff0000)
                         // .setDescription("-------------------------------------------")
@@ -54,7 +55,7 @@ module.exports = {
                     break;
                 }
                 case COMMAND_SAY: {
-                    exported.cmd.say(message, args);
+                    cmd.say(message, args);
                     break;
                 }
                 case COMMAND_CLEAR: {
@@ -68,7 +69,7 @@ module.exports = {
                 }
                 case COMMAND_JOIN: {
                     message.delete();
-                    exported.client.emit('guildMemberAdd', message.member);
+                    client.emit('guildMemberAdd', message.member);
                     break;
                 }
 			}

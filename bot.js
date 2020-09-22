@@ -19,7 +19,8 @@ const voiceStateUpdateEvent = require('./events/voiceStateUpdate.js');
 const messageEvent = require('./events/message.js');
 
 // EXPORTS
-module.exports = { client: client, fs: fs, canvas: canvas, embed: MessageEmbed, cmd: cmd };
+//module.exports = { client: client, fs: fs, canvas: canvas, embed: MessageEmbed, cmd: cmd };
+module.exports = { client, fs, canvas, MessageEmbed, cmd };
 
 client.once('ready', () => {
 	readyEvent.fun();

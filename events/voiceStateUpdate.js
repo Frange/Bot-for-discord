@@ -3,6 +3,8 @@
 // const client = new discord.Client();
 //const exported = require('../bot.js').exports;
 
+const { client, fs, canvas, MessageEmbed, cmd } = require('../bot.js');
+
 module.exports = {
 	fun: function(oldMember, newMember) {
 		const newUserChannel = newMember.voiceChannel;
