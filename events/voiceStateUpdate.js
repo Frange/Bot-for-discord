@@ -38,7 +38,7 @@ module.exports = {
 		if (newState != null) {
 			var userName = client.users.cache.find((u) => u.id === newState.id).username; 
 			console.log(userName);
-			var channelName = client.channels.cache.find((u) => u.id === newState.channelID).name; 
+			var channelName = client.channels.cache.get(newState.channelID); 
 			console.log(channelName);
 
 			const message = `Hola ${userName}, bienvenido al char de voz de ${channelName}`;
