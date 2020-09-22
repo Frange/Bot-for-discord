@@ -20,11 +20,11 @@
 		streaming
 */
 
-const VOICE_CHANNEL_FALL_GUYS = '481523402645962759';
-const CHANNEL_FALL_GUYS = '750723648100237363';
+const VOICE_CHANNEL_FALL_GUYS = 481523402645962759;
+const CHANNEL_FALL_GUYS = 750723648100237363;
 
-const VOICE_CHANNEL_AMONG_US = '753022620298903645';
-const CHANNEL_AMONG_US = '753022463155372193';
+const VOICE_CHANNEL_AMONG_US = 753022620298903645;
+const CHANNEL_AMONG_US = 753022463155372193;
 
 module.exports = {
 	fun: function(client, oldState, newState) {
@@ -42,7 +42,7 @@ module.exports = {
 		if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
 			console.log('Fall guys');
 			client.channels.cache
-				.find(channel => channel.id === CHANNEL_FALL_GUYS)
+				.find(channel => channel.id == CHANNEL_FALL_GUYS)
 				.send(`Hola ${userName}, bienvenido al char de voz de ${channelName}`);
 
 		} else if (newState.channelID === VOICE_CHANNEL_AMONG_US) {
