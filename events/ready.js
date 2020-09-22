@@ -3,7 +3,7 @@
 
 //const exported = require('../bot.js').exports;
 //const { client, fs, canvas, MessageEmbed, cmd } = require('../bot.js');
-const client = require('../bot.js').client;
+const eyclient = require('../bot.js').client;
 
 const CHANNEL_TESTING_BOTS = '753361148585312367';
 
@@ -20,8 +20,8 @@ module.exports = {
 		console.log(' ');
 		console.log(' ');
 		console.log(' ');
-		console.log(` Exported: ${client}`);
-		client.channels.cache
+		console.log(` Exported: ${eyclient}`);
+		eyclient.channels.cache
 			.find(channel => channel.id === CHANNEL_TESTING_BOTS)
 			.send('¡ He vuelto !');
 	},
