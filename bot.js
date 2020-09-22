@@ -2,6 +2,15 @@
 /* eslint-disable no-undef */
 /* eslint-disable indent */
 
+/*
+// File A
+const fooVariable = 'foo';
+module.exports = { varToExport: fooVariable };
+
+// File B
+const fooVariable = require('./fileA').varToExport;
+*/
+
 const Discord = require('discord.js');
 const { Client, MessageEmbed } = require('discord.js');
 const client = new Discord.Client();
@@ -18,8 +27,11 @@ const readyEvent = require('./events/ready.js');
 const voiceStateUpdateEvent = require('./events/voiceStateUpdate.js');
 const messageEvent = require('./events/message.js');
 
+// EXPORTS
+// module.exports = { client: client, fs: fs, canvas: canvas, embed: MessageEmbed, cmd: cmd };
+
 client.once('ready', () => {
-	readyEvent.fun();
+	readyEvent.fun(client);
 });
 
 client.on('voiceStateUpdate', (oldMember, newMember) => {
@@ -27,11 +39,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 });
 
 client.on('message', function(message) {
-	messageEvent.fun(message);
+	messageEvent.fun(message, client, MessageEmbed, cmd);
 });
 
 client.login(process.env.TOKEN);
-
-// EXPORTS
-module.exports = { client: client, fs: fs, canvas: canvas, embed: MessageEmbed, cmd: cmd };
-//module.exports = { client, fs, canvas, MessageEmbed, cmd };

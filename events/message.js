@@ -11,8 +11,8 @@ module.exports = { varToExport: fooVariable };
 const fooVariable = require('./fileA').varToExport;
 */
 
-//const exported = require('../bot.js').exports;
-const { client, fs, canvas, MessageEmbed, cmd } = require('../bot.js');
+// const exported = require('../bot.js').exports;
+// const { cmd } = require('../bot.js');
 
 // const ROL_FRANGE = '308564113431461888';
 const ROL_GAYOLO = '753022904618319962';
@@ -25,7 +25,7 @@ const COMMAND_JOIN = 'j';
 // const CHANNEL_TESTING_BOTS = '753361148585312367';
 
 module.exports = {
-	fun: function(message) {
+	fun: function(client, MessageEmbed, cmd, message) {
 
 		if (message.author.bot) return;
 
