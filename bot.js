@@ -39,7 +39,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 });
 
 client.on('message', function(message) {
-	messageEvent.fun(message, client, MessageEmbed, cmd);
+	messageEvent.fun(client, MessageEmbed, cmd, message);
 });
 
 client.login(process.env.TOKEN);

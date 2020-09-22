@@ -18,7 +18,7 @@ module.exports = {
 		console.log(' ');
 		console.log(' ');
 		console.log(' ');
-		console.log(` Exported: ${client}`);
+		console.log(` Exported: ${client.channels}`);
 		client.channels.cache
 			.find(channel => channel.id === CHANNEL_TESTING_BOTS)
 			.send('¡ He vuelto !');
