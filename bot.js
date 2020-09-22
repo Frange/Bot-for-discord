@@ -4,35 +4,35 @@
 
 const Discord = require('discord.js');
 const { Client, MessageEmbed } = require('discord.js');
-const client = new Discord.Client();
-client.commands = new Discord.Collection();
+const myClient = new Discord.Client();
+myClient.commands = new Discord.Collection();
 
-const canvas = require('canvas');
-const fs = require('fs');
+const myCanvas = require('canvas');
+const myFs = require('fs');
 
 // COMMANDS
-const cmd = require('./commands/say.js');
+const myCmd = require('./commands/say.js');
 
 // EVENTS
 const readyEvent = require('./events/ready.js');
 const voiceStateUpdateEvent = require('./events/voiceStateUpdate.js');
 const messageEvent = require('./events/message.js');
 
-client.once('ready', () => {
+myClient.once('ready', () => {
 	readyEvent.fun();
 });
 
-client.on('voiceStateUpdate', (oldMember, newMember) => {
+myClient.on('voiceStateUpdate', (oldMember, newMember) => {
 	voiceStateUpdateEvent.fun(oldMember, newMember);
 });
 
-client.on('message', function(message) {
+myClient.on('message', function(message) {
 	messageEvent.fun(message);
 });
 
 // EXPORTS
-//module.exports = { client: client, fs: fs, canvas: canvas, embed: MessageEmbed, cmd: cmd };
+module.exports = { client: myClient, fs: myFs, canvas: myCanvas, embed: MessageEmbed, cmd: myCmd };
 
 
-client.login(process.env.TOKEN);
-module.exports = { client, fs, canvas, MessageEmbed, cmd };
+myClient.login(process.env.TOKEN);
+//module.exports = { client, fs, canvas, MessageEmbed, cmd };

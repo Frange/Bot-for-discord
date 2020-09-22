@@ -2,7 +2,8 @@
 // const client = new discord.Client();
 
 //const exported = require('../bot.js').exports;
-const { client, fs, canvas, MessageEmbed, cmd } = require('../bot.js');
+//const { client, fs, canvas, MessageEmbed, cmd } = require('../bot.js');
+const client = require('../bot.js').client;
 
 const CHANNEL_TESTING_BOTS = '753361148585312367';
 
