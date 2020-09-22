@@ -35,9 +35,6 @@ module.exports = {
 		console.log(`id: ${newState.id}`); 					// User id
 		console.log(`member: ${newState.member}`);			// <@[User id>
 
-		let oldChannel = oldState.voiceChannel; // the previous channel, if there was one
-		let newChannel = newState.voiceChannel; // the current channel, if there is one
-		  
 		var userName = client.users.cache.find((u) => u.id === newState.id).username; 
 		console.log(userName);
 		var channelName = client.channels.cache.find((u) => u.id === newState.channelID).name; 
