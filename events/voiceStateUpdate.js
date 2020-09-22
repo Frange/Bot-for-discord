@@ -28,7 +28,6 @@ const CHANNEL_AMONG_US = '753022463155372193';
 
 module.exports = {
 	fun: function (client, oldState, newState) {
-		console.log('VoiceStateUpdate - ');
 		console.log(`channel: ${newState.channel}`); 		// <#[channelID]>
 		console.log(`channelID: ${newState.channelID}`);	// channelID
 		console.log(`guild: ${newState.guild}`); 			// Server name
@@ -37,9 +36,8 @@ module.exports = {
 
 		if (newState != null) {
 			var userName = client.users.cache.find((u) => u.id === newState.id).username;
-			console.log(userName);
+			console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${newState.guild}`);
 			var channel = client.channels.cache.get(newState.channelID);
-			console.log(channel);
 
 			const message = `@${userName} se ha conectado al chat de voz de ${channel}`;
 
