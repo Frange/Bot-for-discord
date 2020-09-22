@@ -32,8 +32,7 @@ myClient.on('message', function(message) {
 
 myClient.login(process.env.TOKEN);
 
-
-
 // EXPORTS
-module.exports = { client: myClient, fs: myFs, canvas: myCanvas, embed: MessageEmbed, cmd: myCmd };
+//module.exports = { client: myClient, fs: myFs, canvas: myCanvas, embed: MessageEmbed, cmd: myCmd };
 //module.exports = { client, fs, canvas, MessageEmbed, cmd };
+export { myClient, myFs, myCanvas, MessageEmbed, myCmd };
