@@ -30,18 +30,17 @@ module.exports = {
 	fun: function (client, oldState, newState) {
 		if (newState != null) {
 			var userName = client.users.cache.find((u) => u.id === newState.id).username;
-			console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${newState.guild}`);
 			var channel = client.channels.cache.get(newState.channelID);
 
 			const message = `@${userName} se ha conectado al chat de voz de ${channel}`;
 
 			if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
 				console.log(' ');
-				console.log('Fall guys');
+				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
 				client.channels.cache.get(CHANNEL_FALL_GUYS).send(message);
 			} else if (newState.channelID === VOICE_CHANNEL_AMONG_US) {
 				console.log(' ');
-				console.log('Among Us');
+				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
 				client.channels.cache.get(CHANNEL_AMONG_US).send(message);
 			}
 		}
