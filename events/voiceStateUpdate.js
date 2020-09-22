@@ -7,9 +7,10 @@
 
 module.exports = {
 	fun: function(client, oldMember, newMember) {
-		let oldUserChannel = oldMember.guild.channels.cache.get(oldMember.voice.channelID);
+		let oldUserChannel = newMember.guild.channels.cache.get(oldMember.voice.channelID)
 		let newUserChannel = newMember.guild.channels.cache.get(newMember.voice.channelID);
-	   
+		if (oldMember.voice.channelID == newMember.voice.channelID) return
+
 		console.log('VoiceStateUpdate');
 		console.log(`newUserChannel: ${newUserChannel}`);
 		console.log(`oldUserChannel: ${oldUserChannel}`);
