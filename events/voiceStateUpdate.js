@@ -35,22 +35,26 @@ module.exports = {
 		console.log(`id: ${newState.id}`); 					// User id
 		console.log(`member: ${newState.member}`);			// <@[User id>
 
-		var userName = client.users.cache.find((u) => u.id === newState.id).username; 
-		console.log(userName);
-		var channelName = client.channels.cache.find((u) => u.id === newState.channelID).name; 
-		console.log(channelName);
+		if (newState != null) {
+			var userName = client.users.cache.find((u) => u.id === newState.id).username; 
+			console.log(userName);
+			var channelName = client.channels.cache.find((u) => u.id === newState.channelID).name; 
+			console.log(channelName);
 
-		if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
-			console.log('Fall guys');
-			client.channels.cache
-				.find(channel => channel.id === CHANNEL_FALL_GUYS)
-				.send(`Hola ${userName}, bienvenido al char de voz de ${channelName}`);
+			if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
+				console.log(' ');
+				console.log('Fall guys');
+				client.channels.cache
+					.find(channel => channel.id === CHANNEL_FALL_GUYS)
+					.send(`Hola ${userName}, bienvenido al char de voz de ${channelName}`);
 
-		} else if (newState.channelID === VOICE_CHANNEL_AMONG_US) {
-			console.log('Among Us');
-			client.channels.cache
-				.find(channel => channel.id === CHANNEL_AMONG_US)
-				.send(`Hola ${userName}, bienvenido al char de voz de ${channelName}`);
+			} else if (newState.channelID === VOICE_CHANNEL_AMONG_US) {
+				console.log(' ');
+				console.log('Among Us');
+				client.channels.cache
+					.find(channel => channel.id === CHANNEL_AMONG_US)
+					.send(`Hola ${userName}, bienvenido al char de voz de ${channelName}`);
+			}
 		}
 	},
 };
