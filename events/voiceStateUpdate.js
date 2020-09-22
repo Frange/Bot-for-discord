@@ -1,28 +1,58 @@
 /* eslint-disable brace-style */
-// const discord = require('discord.js');
-// const client = new discord.Client();
-// const exported = require('../bot.js').exports;
 
-// const { client, fs, canvas, MessageEmbed, cmd } = require('../bot.js');
+/* 
+	Properties
+		channel
+		channelID
+		connection
+		deaf
+		guild
+		id
+		member
+		mute
+		selfDeaf
+		selfMute
+		selfVideo
+		serverDeaf
+		serverMute
+		sessionID
+		speaking
+		streaming
+*/
+
+const VOICE_CHANNEL_FALL_GUYS = '481523402645962759';
+const CHANNEL_FALL_GUYS = '750723648100237363';
+
+const VOICE_CHANNEL_AMONG_US = '753022620298903645';
+const CHANNEL_AMONG_US = '753022463155372193';
 
 module.exports = {
 	fun: function(client, oldState, newState) {
 		console.log('VoiceStateUpdate');
-		console.log(`channel: ${newState.channel}`);
-		console.log(`channelID: ${newState.channelID}`);
-		console.log(`connection: ${newState.connection}`);
-		console.log(`deaf: ${newState.deaf}`);
-		console.log(`guild: ${newState.guild}`);
-		console.log(`id: ${newState.id}`);
-		console.log(`member: ${newState.member}`);
-		console.log(`streaming: ${newState.streaming}`);
-		console.log(`speaking: ${newState.speaking}`);
+		console.log(`channel: ${newState.channel}`); 		// <#[channelID]>
+		console.log(`channelID: ${newState.channelID}`);	// channelID
+		console.log(`guild: ${newState.guild}`); 			// Server name
+		console.log(`id: ${newState.id}`); 					// User id
+		console.log(`member: ${newState.member}`);			// <@[User id>
 
 		let oldChannel = oldState.voiceChannel; // the previous channel, if there was one
 		let newChannel = newState.voiceChannel; // the current channel, if there is one
 		  
-		if (oldChannel != newChannel) {
-			newChannel.join();
+		var userName = client.users.cache.find((u) => u.id === newState.id).username; 
+		console.log(userName);
+		var channelName = client.channels.cache.find((u) => u.id === newState.channelID).name; 
+
+		if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
+			console.log('Fall guys');
+			client.channels.cache
+				.find(channel => channel.id === CHANNEL_FALL_GUYS)
+				.send(`Hola ${userName}, bienvenido al char de voz de ${channelName}`);
+
+		} else if (newState.channelID === VOICE_CHANNEL_AMONG_US) {
+			console.log('Among Us');
+			client.channels.cache
+				.find(channel => channel.id === CHANNEL_AMONG_US)
+				.send(`Hola ${userName}, bienvenido al char de voz de ${channelName}`);
 		}
 	},
 };
