@@ -46,27 +46,11 @@ module.exports = {
 			if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
 				console.log(' ');
 				console.log('Fall guys');
-
-				const canal = member.guild.channels.cache.find(ch => ch.id === CHANNEL_FALL_GUYS);
-				canal.send(message);
-
-				/*
-				client.channels.cache
-					.find(channel => channel.id === CHANNEL_FALL_GUYS)
-					.send();
-				*/
-
+				client.channels.cache.get(CHANNEL_AMONG_US).send(message);
 			} else if (newState.channelID === VOICE_CHANNEL_AMONG_US) {
 				console.log(' ');
 				console.log('Among Us');
-
-				const canal = member.guild.channels.cache.find(ch => ch.id === CHANNEL_AMONG_US);
-				canal.send(message);
-				/*
-				client.channels.cache
-					.find(channel => channel.id === CHANNEL_AMONG_US)
-					.send(`Hola ${userName}, bienvenido al char de voz de ${channelName}`);
-				*/
+				client.channels.cache.get(CHANNEL_AMONG_US).send(message);
 			}
 		}
 	},
