@@ -30,9 +30,10 @@ myClient.on('message', function(message) {
 	messageEvent.fun(message);
 });
 
+myClient.login(process.env.TOKEN);
+
+
+
 // EXPORTS
 module.exports = { client: myClient, fs: myFs, canvas: myCanvas, embed: MessageEmbed, cmd: myCmd };
-
-
-myClient.login(process.env.TOKEN);
 //module.exports = { client, fs, canvas, MessageEmbed, cmd };
