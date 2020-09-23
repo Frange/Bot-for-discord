@@ -26,7 +26,7 @@ const CHANNEL_FALL_GUYS = '750723648100237363';
 const VOICE_CHANNEL_AMONG_US = '753022620298903645';
 const CHANNEL_AMONG_US = '753022463155372193';
 
-function send() {
+function mySend() {
 	const canvas = Canvas.createCanvas(854, 480);
 	const ctx = canvas.getContext('2d');
 
@@ -57,7 +57,7 @@ module.exports = {
 
 			const message = `@${userName} se ha conectado al chat de voz ${channel}`;
 
-			send();
+			mySend();
 			if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
