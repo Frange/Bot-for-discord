@@ -25,7 +25,7 @@ client.once('ready', () => {
 	readyEvent.fun(client);
 });
 
-client.on('voiceStateUpdate', (oldState, newState) => {
+client.on('voiceStateUpdate', async (oldState, newState) => {
 	voiceStateUpdateEvent.fun(client, oldState, newState);
 });
 
