@@ -20,6 +20,8 @@
 		streaming
 */
 
+const canvas = require('canvas');
+
 const VOICE_CHANNEL_FALL_GUYS = '481523402645962759';
 const CHANNEL_FALL_GUYS = '750723648100237363';
 
