@@ -32,7 +32,7 @@ function mySend() {
 	const canvas = Canvas.createCanvas(854, 480);
 	const ctx = canvas.getContext('2d');
 
-	const background = await Canvas.loadImage('./newchallenger.jpg');
+	const background = Canvas.loadImage('./newchallenger.jpg');
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
 	ctx.strokeStyle = '#74037b';
@@ -43,7 +43,7 @@ function mySend() {
 	ctx.closePath();
 	ctx.clip();
 
-	const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
+	const avatar = Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
 	ctx.drawImage(avatar, 600, 150, 200, 200);
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
