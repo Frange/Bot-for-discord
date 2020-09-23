@@ -1,6 +1,6 @@
 /* eslint-disable brace-style */
 
-/* 
+/*
 	Properties
 		channel
 		channelID
@@ -50,18 +50,19 @@ async function mySend(client, userId) {
 
 	const avatar = await Canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
 	ctx.drawImage(avatar, 25, 25, 200, 200);
+	ctx.translate(600, 200);
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
 	client.channels.cache.get(CHANNEL_TESTING_BOTS).send(`Hay un nuevo contrincante ${user.username}`, attachment);
-	//canal.send(`Hay un nuevo contrincante ${member}`, attachment);
+	// canal.send(`Hay un nuevo contrincante ${member}`, attachment);
 }
 
 module.exports = {
-	fun: function (client, oldState, newState) {
+	fun: function(client, oldState, newState) {
 		if (newState != null) {
-			var userName = client.users.cache.find((u) => u.id === newState.id).username;
-			var channel = client.channels.cache.get(newState.channelID);
+			const userName = client.users.cache.find((u) => u.id === newState.id).username;
+			const channel = client.channels.cache.get(newState.channelID);
 
 			const message = `@${userName} se ha conectado al chat de voz ${channel}`;
 
@@ -69,12 +70,12 @@ module.exports = {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
 				mySend(client, newState.id);
-				//client.channels.cache.get(CHANNEL_FALL_GUYS).send();
+				// client.channels.cache.get(CHANNEL_FALL_GUYS).send();
 			} else if (newState.channelID === VOICE_CHANNEL_AMONG_US) {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
 				mySend(client, newState.id);
-				//client.channels.cache.get(CHANNEL_AMONG_US).send(mySend (client, newState.id));
+				// client.channels.cache.get(CHANNEL_AMONG_US).send(mySend (client, newState.id));
 			}
 		}
 	},
