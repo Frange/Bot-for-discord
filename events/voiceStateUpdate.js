@@ -28,7 +28,7 @@ const CHANNEL_FALL_GUYS = '750723648100237363';
 const VOICE_CHANNEL_AMONG_US = '753022620298903645';
 const CHANNEL_AMONG_US = '753022463155372193';
 
-async function mySend(userId) {
+async function mySend(client, userId) {
 	const user = client.users.cache.get(userId);
 
 	const canvas = Canvas.createCanvas(854, 480);
@@ -65,11 +65,11 @@ module.exports = {
 			if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
-				client.channels.cache.get(CHANNEL_FALL_GUYS).send(mySend(newState.id));
+				client.channels.cache.get(CHANNEL_FALL_GUYS).send(mySend(client, newState.id));
 			} else if (newState.channelID === VOICE_CHANNEL_AMONG_US) {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
-				client.channels.cache.get(CHANNEL_AMONG_US).send(mySend(newState.id));
+				client.channels.cache.get(CHANNEL_AMONG_US).send(mySend(client, newState.id));
 			}
 		}
 	},
