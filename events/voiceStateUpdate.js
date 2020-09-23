@@ -20,6 +20,7 @@
 		streaming
 */
 
+const Discord = require('discord.js');
 const Canvas = require('canvas');
 
 const VOICE_CHANNEL_FALL_GUYS = '481523402645962759';
