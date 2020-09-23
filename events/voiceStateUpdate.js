@@ -51,7 +51,7 @@ async function mySend(client, userId) {
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
-	return attachment;
+	client.channels.cache.get(CHANNEL_FALL_GUYS).send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	//canal.send(`Hay un nuevo contrincante ${member}`, attachment);
 }
 
@@ -66,11 +66,13 @@ module.exports = {
 			if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
-				client.channels.cache.get(CHANNEL_FALL_GUYS).send(mySend(client, newState.id));
+				mySend(client, newState.id);
+				//client.channels.cache.get(CHANNEL_FALL_GUYS).send();
 			} else if (newState.channelID === VOICE_CHANNEL_AMONG_US) {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
-				client.channels.cache.get(CHANNEL_AMONG_US).send(mySend(client, newState.id));
+				mySend(client, newState.id);
+				//client.channels.cache.get(CHANNEL_AMONG_US).send(mySend (client, newState.id));
 			}
 		}
 	},
