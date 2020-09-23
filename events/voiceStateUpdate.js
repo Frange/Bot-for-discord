@@ -26,6 +26,29 @@ const CHANNEL_FALL_GUYS = '750723648100237363';
 const VOICE_CHANNEL_AMONG_US = '753022620298903645';
 const CHANNEL_AMONG_US = '753022463155372193';
 
+function send() {
+	const canvas = Canvas.createCanvas(854, 480);
+	const ctx = canvas.getContext('2d');
+
+	const background = await Canvas.loadImage('./newchallenger.jpg');
+	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+	ctx.strokeStyle = '#74037b';
+	ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+	ctx.beginPath();
+	ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
+	ctx.closePath();
+	ctx.clip();
+
+	const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
+	ctx.drawImage(avatar, 25, 25, 200, 200);
+
+	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
+
+	canal.send(`Hay un nuevo contrincante ${member}`, attachment);
+}
+
 module.exports = {
 	fun: function (client, oldState, newState) {
 		if (newState != null) {
@@ -34,6 +57,7 @@ module.exports = {
 
 			const message = `@${userName} se ha conectado al chat de voz ${channel}`;
 
+			send();
 			if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
