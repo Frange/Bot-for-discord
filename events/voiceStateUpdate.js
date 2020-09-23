@@ -48,7 +48,8 @@ async function mySend() {
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
-	canal.send(`Hay un nuevo contrincante ${member}`, attachment);
+	return attachment;
+	//canal.send(`Hay un nuevo contrincante ${member}`, attachment);
 }
 
 module.exports = {
@@ -59,15 +60,14 @@ module.exports = {
 
 			const message = `@${userName} se ha conectado al chat de voz ${channel}`;
 
-			mySend();
 			if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
-				client.channels.cache.get(CHANNEL_FALL_GUYS).send(message);
+				client.channels.cache.get(CHANNEL_FALL_GUYS).send(mySend());
 			} else if (newState.channelID === VOICE_CHANNEL_AMONG_US) {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
-				client.channels.cache.get(CHANNEL_AMONG_US).send(message);
+				client.channels.cache.get(CHANNEL_AMONG_US).send(mySend());
 			}
 		}
 	},
