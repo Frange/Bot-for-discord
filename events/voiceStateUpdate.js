@@ -44,7 +44,8 @@ async function mySend(client, userId) {
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
 	ctx.beginPath();
-	ctx.arc(600, 280, 100, 0, Math.PI * 2, true);
+	ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
+	ctx.lineTo(avatar, 600, 150);
 	ctx.closePath();
 	ctx.clip();
 
