@@ -49,7 +49,7 @@ async function mySend(client, userId) {
 	ctx.clip();
 
 	const avatar = await Canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
-	ctx.drawImage(avatar, 25, 25, 200, 200);
+	ctx.drawImage(avatar, 250, 250, 200, 200);
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
