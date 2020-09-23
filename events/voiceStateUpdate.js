@@ -29,6 +29,8 @@ const CHANNEL_FALL_GUYS = '750723648100237363';
 const VOICE_CHANNEL_AMONG_US = '753022620298903645';
 const CHANNEL_AMONG_US = '753022463155372193';
 
+const CHANNEL_TESTING_BOTS = '753361148585312367';
+
 async function mySend(client, userId) {
 	const user = client.users.cache.get(userId);
 
@@ -48,11 +50,11 @@ async function mySend(client, userId) {
 
 	const avatar = await Canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
 	ctx.drawImage(avatar, 25, 25, 200, 200);
-	ctx.lineTo(avatar, 600, 150)
+	ctx.lineTo(avatar, 600, 150);
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
-	client.channels.cache.get(CHANNEL_FALL_GUYS).send(`Hay un nuevo contrincante ${user.username}`, attachment);
+	client.channels.cache.get(CHANNEL_TESTING_BOTS).send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	//canal.send(`Hay un nuevo contrincante ${member}`, attachment);
 }
 
