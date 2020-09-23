@@ -29,7 +29,7 @@ client.on('voiceStateUpdate', (oldState, newState) => {
 	voiceStateUpdateEvent.fun(client, oldState, newState);
 });
 
-client.on('message', function (message) {
+client.on('message', function(message) {
 	messageEvent.fun(client, MessageEmbed, cmd, message);
 });
 
