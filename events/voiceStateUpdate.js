@@ -34,9 +34,9 @@ const CHANNEL_JM = '758610849064681482';
 
 var images1p = [
     { img: './newchallenger.jpg', xsize: 854, ysize: 480, x: 600, y: 240, rad: 130 },
-    { img: './img/1p-1.jpg', xsize: 640, ysize: 360, x: 320, y: 130, rad: 60 },
-    { img: './img/1p-2.jpg', xsize: 854, ysize: 480, x: 600, y: 240, rad: 130 },
-    { img: './img/1p-3.jpg', xsize: 854, ysize: 480, x: 600, y: 240, rad: 130 }
+    { img: './img/1p-1.jpg', xsize: 640, ysize: 360, x: 320, y: 130, rad: 40 },
+    { img: './img/1p-2.jpg', xsize: 640, ysize: 360, x: 320, y: 130, rad: 40 },
+    { img: './img/1p-3.jpg', xsize: 640, ysize: 360, x: 320, y: 130, rad: 40 }
 ];
 
 async function mySend(client, userId) {
