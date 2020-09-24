@@ -41,7 +41,7 @@ var images1p = [
 
 async function mySend(client, userId) {
 
-	const randomNumber = 1;
+	const randomNumber = 2;
 	const images = images1p;
 
 	console.log('1');
