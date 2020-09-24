@@ -108,15 +108,15 @@ async function renderAvatar(user, position, images, ctx) {
 
 async function mySend(client, userId, channel) {
 	const randomNumber = 2;
-	let images = images3p;
+	//let images = images3p;
 	let size = 0, position = 0;
 
 	let user = client.users.cache.get(userId);
 
-	const canvas = Canvas.createCanvas(images[randomNumber].xsize, images[randomNumber].ysize);
+	const canvas = Canvas.createCanvas(images3p[randomNumber].xsize, images3p[randomNumber].ysize);
 	const ctx = canvas.getContext('2d');
 
-	const background = await Canvas.loadImage(images[randomNumber].img);
+	const background = await Canvas.loadImage(images3p[randomNumber].img);
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
@@ -128,6 +128,7 @@ async function mySend(client, userId, channel) {
 	console.log(`Size: ${size}`);
 	console.log(` `);
 
+	/*
 	switch (size) {
 		case 1: {
 			images = images1p;
@@ -146,13 +147,14 @@ async function mySend(client, userId, channel) {
 			break;
 		}
 	}
+	*/
 
 	for (const [memberID, member] of channel.members) {
 		console.log(`MemberID: ${memberID}`);
 		if (memberID != userId) {
 			position++;
 			user = client.users.cache.get(memberID);
-			renderAvatar(user, position, images, ctx);
+			renderAvatar(user, position, images3p, ctx);
 		}
 	}
 
