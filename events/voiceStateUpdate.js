@@ -44,13 +44,17 @@ async function mySend(client, userId) {
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
+	const xCenter = 427;
+	const yCenter = 240;
+	const radious = 100;
+
 	ctx.beginPath();
-	ctx.arc(225, 125, 100, 0, Math.PI * 2, true);
+	ctx.arc(xCenter, yCenter, radious, 0, Math.PI * 2, true);
 	ctx.closePath();
 	ctx.clip();
 
 	const avatar = await Canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
-	ctx.drawImage(avatar, 25, 25, 200, 200);
+	ctx.drawImage(avatar, (xCenter - radious), (yCenter - radious), (radious * 2), (radious * 2));
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
@@ -60,7 +64,7 @@ async function mySend(client, userId) {
 }
 
 module.exports = {
-	fun: function(client, oldState, newState) {
+	fun: function (client, oldState, newState) {
 		if (newState != null) {
 			const userName = client.users.cache.find((u) => u.id === newState.id).username;
 			const channel = client.channels.cache.get(newState.channelID);
