@@ -72,27 +72,27 @@ async function renderAvatar(user, position, images, ctx) {
 	switch (position) {
 		case 1: {
 			// Modify this 3 parameters to change size and position of the avatar image.
-			xCenter = images[randomNumber].x1; // Set X position of center circle.
-			yCenter = images[randomNumber].y1; // Set Y position of center circle.
-			radious = images[randomNumber].rad; // Avatar size = radious * 2.
+			xCenter = images1p[randomNumber].x1; // Set X position of center circle.
+			yCenter = images1p[randomNumber].y1; // Set Y position of center circle.
+			radious = images1p[randomNumber].rad; // Avatar size = radious * 2.
 			break;
 		}
 		case 2: {
-			xCenter = images[randomNumber].x2;
-			yCenter = images[randomNumber].y2;
-			radious = images[randomNumber].rad;
+			xCenter = images2p[randomNumber].x2;
+			yCenter = images2p[randomNumber].y2;
+			radious = images2p[randomNumber].rad;
 			break;
 		}
 		case 3: {
-			xCenter = images[randomNumber].x3;
-			yCenter = images[randomNumber].y3;
-			radious = images[randomNumber].rad;
+			xCenter = images3p[randomNumber].x3;
+			yCenter = images3p[randomNumber].y3;
+			radious = images3p[randomNumber].rad;
 			break;
 		}
 		case 4: {
-			xCenter = images[randomNumber].x4;
-			yCenter = images[randomNumber].y4;
-			radious = images[randomNumber].rad;
+			xCenter = images4p[randomNumber].x4;
+			yCenter = images4p[randomNumber].y4;
+			radious = images4p[randomNumber].rad;
 			break;
 		}
 	}
