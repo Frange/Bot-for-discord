@@ -43,39 +43,32 @@ async function mySend(client, userId) {
 
 	const randomNumber = 1;
 	const images = images1p;
-
-
+	
 	console.log('1');
 
 	const user = client.users.cache.get(userId);
 	const canvas = Canvas.createCanvas(images[randomNumber].xsize, images[randomNumber].ysize);
 	const ctx = canvas.getContext('2d');
 
-	console.log('2');
 	const background = await Canvas.loadImage(images[randomNumber].img);
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
-	console.log('3');
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-	console.log('4');
 	// Modify this 3 parameters to change size and position of the avatar image.
 	const xCenter = images[randomNumber].x; // Set X position of center circle.
 	const yCenter = images[randomNumber].y; // Set Y position of center circle.
 	const radious = images[randomNumber].rad; // Avatar size = radious * 2.
 
-	console.log('5');
 	ctx.beginPath();
 	ctx.arc(xCenter, yCenter, radious, 0, Math.PI * 2, true);
 	ctx.closePath();
 	ctx.clip();
-	console.log('6');
 
 	const avatar = await Canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
 	ctx.drawImage(avatar, (xCenter - radious), (yCenter - radious), (radious * 2), (radious * 2));
 
-	console.log('7');
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
 	//client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
