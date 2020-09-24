@@ -67,25 +67,23 @@ async function mySend(client, userId) {
 module.exports = {
 	fun: function (client, oldState, newState) {
 		console.log(' ');
-		console.log(`OldState: @${oldState.id}`);
-		console.log(`OldState: @${oldState.connection}`);
-		console.log(`OldState: @${oldState.member}`);
-		console.log(`OldState: @${oldState.mute}`);
-		console.log(`OldState: @${oldState.selfMute}`);
-		console.log(`OldState: @${oldState.speaking}`);
-		console.log(`OldState: @${oldState.selfMute}`);
-		console.log(`OldState: @${oldState.channel}`);
-		console.log(`OldState: @${oldState.channelID}`);
+		console.log(`OldState: Id: @${oldState.id}`);
+		console.log(`OldState: Connection: @${oldState.connection}`);
+		console.log(`OldState: Member: @${oldState.member}`);
+		console.log(`OldState: Mude: @${oldState.mute}`);
+		console.log(`OldState: SelfMute: @${oldState.selfMute}`);
+		console.log(`OldState: Speaking: @${oldState.speaking}`);
+		console.log(`OldState: channel: @${oldState.channel}`);
+		console.log(`OldState: channelID: @${oldState.channelID}`);
 		console.log(' ');
-		console.log(`NewState: @${newState.id}`);
-		console.log(`NewState: @${newState.connection}`);
-		console.log(`NewState: @${newState.member}`);
-		console.log(`NewState: @${newState.mute}`);
-		console.log(`NewState: @${newState.selfMute}`);
-		console.log(`NewState: @${newState.speaking}`);
-		console.log(`NewState: @${newState.selfMute}`);
-		console.log(`NewState: @${newState.channel}`);
-		console.log(`NewState: @${newState.channelID}`);
+		console.log(`NewState: Id: @${newState.id}`);
+		console.log(`NewState: Connection: @${newState.connection}`);
+		console.log(`NewState: Member: @${newState.member}`);
+		console.log(`NewState: Mute: @${newState.mute}`);
+		console.log(`NewState: SelfMute: @${newState.selfMute}`);
+		console.log(`NewState: Speaking: @${newState.speaking}`);
+		console.log(`NewState: Channel: @${newState.channel}`);
+		console.log(`NewState: ChannelID: @${newState.channelID}`);
 
 		if (newState != null) {
 			const userName = client.users.cache.find((u) => u.id === newState.id).username;
