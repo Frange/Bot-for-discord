@@ -125,6 +125,7 @@ async function mySend(client, userId, channel) {
 	}
 
 	console.log(`Size: ${size}`);
+	console.log(` `);
 
 	switch (size) {
 		case 1: {
@@ -146,6 +147,7 @@ async function mySend(client, userId, channel) {
 	}
 
 	for (const [memberID, member] of channel.members) {
+		console.log(`MemberID: ${memberID}`);
 		if (memberID != userId) {
 			position++;
 			user = client.users.cache.get(memberID);
