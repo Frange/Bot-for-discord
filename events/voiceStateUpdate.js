@@ -63,9 +63,9 @@ const images4p = [
 ];
 
 async function renderAvatar(user, position) {
-	const xCenter = 0;
-	const yCenter = 0;
-	const radious = 0;
+	let xCenter = 0;
+	let yCenter = 0;
+	let radious = 0;
 	const randomNumber = 1; 
 
 	switch (position) {
@@ -110,7 +110,7 @@ async function mySend(client, userId, channel) {
 	let images = images1p;
 	let size = 0, position = 0;
 
-	const user = client.users.cache.get(userId);
+	let user = client.users.cache.get(userId);
 
 	const canvas = Canvas.createCanvas(images[randomNumber].xsize, images[randomNumber].ysize);
 	const ctx = canvas.getContext('2d');
