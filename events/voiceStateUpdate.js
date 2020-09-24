@@ -108,7 +108,7 @@ async function renderAvatar(user, position, images, ctx) {
 
 async function mySend(client, userId, channel) {
 	const randomNumber = 2;
-	let images = images1p;
+	let images = images3p;
 	let size = 0, position = 0;
 
 	let user = client.users.cache.get(userId);
@@ -120,6 +120,7 @@ async function mySend(client, userId, channel) {
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
 	for (const [memberID, member] of channel.members) {
 		size++;
 	}
@@ -145,7 +146,6 @@ async function mySend(client, userId, channel) {
 			break;
 		}
 	}
-	console.log(`1 `);
 
 	for (const [memberID, member] of channel.members) {
 		console.log(`MemberID: ${memberID}`);
