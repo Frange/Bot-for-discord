@@ -62,17 +62,67 @@ const images4p = [
 	{ img: './img/4p-5.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
 ];
 
-async function mySend(client, userId, channel) {
+function renderAvatar(user, position) {
+	const xCenter;
+	const yCenter;
+	const radious;
 
+	switch (position) {
+		case 1: {
+			// Modify this 3 parameters to change size and position of the avatar image.
+			xCenter = images[randomNumber].x1; // Set X position of center circle.
+			yCenter = images[randomNumber].y1; // Set Y position of center circle.
+			radious = images[randomNumber].rad; // Avatar size = radious * 2.
+			break;
+		}
+		case 2: {
+			xCenter = images[randomNumber].x2;
+			yCenter = images[randomNumber].y2;
+			radious = images[randomNumber].rad;
+			break;
+		}
+		case 3: {
+			xCenter = images[randomNumber].x3;
+			yCenter = images[randomNumber].y3;
+			radious = images[randomNumber].rad;
+			break;
+		}
+		case 4: {
+			xCenter = images[randomNumber].x4;
+			yCenter = images[randomNumber].y4;
+			radious = images[randomNumber].rad;
+			break;
+		}
+	}
+
+	ctx.beginPath();
+	ctx.arc(xCenter, yCenter, radious, 0, Math.PI * 2, true);
+	ctx.closePath();
+	ctx.clip();
+
+	const avatar = await Canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
+	ctx.drawImage(avatar, (xCenter - radious), (yCenter - radious), (radious * 2), (radious * 2));
+}
+
+async function mySend(client, userId, channel) {
 	const randomNumber = 2;
 	let images = images1p;
-	let size = 0;
+	let size = 0, position = 0;
 
+	const user = client.users.cache.get(userId);
+
+	const canvas = Canvas.createCanvas(images[randomNumber].xsize, images[randomNumber].ysize);
+	const ctx = canvas.getContext('2d');
+
+	const background = await Canvas.loadImage(images[randomNumber].img);
+	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+	ctx.strokeStyle = '#74037b';
+	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 	for (const [memberID, member] of channel.members) {
 		size++;
 	}
 
-	switch(size) {
+	switch (size) {
 		case 1: {
 			images = images1p;
 			break;
@@ -85,32 +135,19 @@ async function mySend(client, userId, channel) {
 			images = images3p;
 			break;
 		}
+		case 4: {
+			images = images4p;
+			break;
+		}
 	}
 
-	console.log('1');
-
-	const user = client.users.cache.get(userId);
-	const canvas = Canvas.createCanvas(images[randomNumber].xsize, images[randomNumber].ysize);
-	const ctx = canvas.getContext('2d');
-
-	const background = await Canvas.loadImage(images[randomNumber].img);
-	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-
-	ctx.strokeStyle = '#74037b';
-	ctx.strokeRect(0, 0, canvas.width, canvas.height);
-
-	// Modify this 3 parameters to change size and position of the avatar image.
-	const xCenter = images[randomNumber].x; // Set X position of center circle.
-	const yCenter = images[randomNumber].y; // Set Y position of center circle.
-	const radious = images[randomNumber].rad; // Avatar size = radious * 2.
-
-	ctx.beginPath();
-	ctx.arc(xCenter, yCenter, radious, 0, Math.PI * 2, true);
-	ctx.closePath();
-	ctx.clip();
-
-	const avatar = await Canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
-	ctx.drawImage(avatar, (xCenter - radious), (yCenter - radious), (radious * 2), (radious * 2));
+	for (const [memberID, member] of channel.members) {
+		if (memberID != userId) {
+			position++;
+			user = client.users.cache.get(memberID);
+			renderAvatar(user, position);
+		}
+	}
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
@@ -120,7 +157,7 @@ async function mySend(client, userId, channel) {
 }
 
 module.exports = {
-	fun: function(client, oldState, newState) {
+	fun: function (client, oldState, newState) {
 		/*
 		console.log(`OldState: Id: @${oldState.id}`);
 		console.log(`OldState: Connection: @${oldState.connection}`);
