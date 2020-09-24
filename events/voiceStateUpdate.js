@@ -63,9 +63,9 @@ const images4p = [
 ];
 
 function renderAvatar(user, position) {
-	const xCenter;
-	const yCenter;
-	const radious;
+	const xCenter = 0;
+	const yCenter = 0;
+	const radious = 0;
 	const randomNumber = 1; 
 
 	switch (position) {
