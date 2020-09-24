@@ -41,7 +41,7 @@ var images1p = [
 
 async function mySend(client, userId) {
 
-	const playerNumber = 1;
+	const randomNumber = 1;
 	const images = images1p;
 
 	const user = client.users.cache.get(userId);
