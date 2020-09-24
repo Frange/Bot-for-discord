@@ -44,9 +44,10 @@ async function mySend(client, userId) {
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-	const xCenter = 427;
-	const yCenter = 240;
-	const radious = 100;
+	// Modify this 3 parameters to change size and position of the avatar image.
+	const xCenter = 527; // Set X position of center circle.
+	const yCenter = 240; // Set Y position of center circle.
+	const radious = 100; // Avatar size = radious * 2.
 
 	ctx.beginPath();
 	ctx.arc(xCenter, yCenter, radious, 0, Math.PI * 2, true);
