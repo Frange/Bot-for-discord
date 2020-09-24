@@ -1,3 +1,6 @@
+/* eslint-disable indent */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-inline-comments */
 /* eslint-disable brace-style */
 
 /*
@@ -32,17 +35,57 @@ const CHANNEL_AMONG_US = '753022463155372193';
 const CHANNEL_TESTING_BOTS = '753361148585312367';
 const CHANNEL_JM = '758610849064681482';
 
-var images1p = [
-    { img: './newchallenger.jpg', xsize: 854, ysize: 480, x: 600, y: 240, rad: 130 },
-    { img: './img/1p-1.jpg', xsize: 640, ysize: 360, x: 330, y: 130, rad: 40 },
-    { img: './img/1p-2.jpg', xsize: 640, ysize: 360, x: 325, y: 127, rad: 40 },
-    { img: './img/1p-3.jpg', xsize: 640, ysize: 360, x: 330, y: 125, rad: 40 }
+const images1p = [
+	{ img: './newchallenger.jpg', xsize: 854, ysize: 480, x1: 600, y1: 240, rad: 130 },
+	{ img: './img/1p-1.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, rad: 40 },
+	{ img: './img/1p-2.jpg', xsize: 640, ysize: 360, x1: 325, y1: 127, rad: 40 },
+	{ img: './img/1p-3.jpg', xsize: 640, ysize: 360, x1: 330, y1: 125, rad: 40 },
+	{ img: './img/1p-4.jpg', xsize: 640, ysize: 360, x1: 330, y1: 125, rad: 40 },
 ];
 
-async function mySend(client, userId) {
+const images2p = [
+	{ img: './img/2p-1.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, x2: 250, y2: 150, rad: 40 },
+	{ img: './img/2p-2.jpg', xsize: 640, ysize: 360, x1: 325, y1: 127, x2: 250, y2: 150, rad: 40 },
+	{ img: './img/2p-3.jpg', xsize: 640, ysize: 360, x1: 330, y1: 125, x2: 250, y2: 150, rad: 40 },
+];
+
+const images3p = [
+	{ img: './img/3p-1.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, x2: 250, y2: 150, x3: 410, y3: 150, rad: 40 },
+	{ img: './img/3p-2.jpg', xsize: 640, ysize: 360, x1: 325, y1: 127, x2: 250, y2: 150, x3: 410, y3: 150, rad: 40 },
+];
+
+const images4p = [
+	{ img: './img/4p-1.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
+	{ img: './img/4p-2.jpg', xsize: 640, ysize: 360, x1: 325, y1: 127, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
+	{ img: './img/4p-3.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
+	{ img: './img/4p-4.jpg', xsize: 640, ysize: 360, x1: 325, y1: 127, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
+	{ img: './img/4p-5.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
+];
+
+async function mySend(client, userId, channel) {
 
 	const randomNumber = 2;
-	const images = images1p;
+	let images = images1p;
+	let size = 0;
+
+	for (const [memberID, member] of channel.members) {
+		size++;
+	}
+
+	switch(size) {
+		case 1: {
+			images = images1p;
+			break;
+		}
+		case 2: {
+			images = images2p;
+			break;
+		}
+		case 3: {
+			images = images3p;
+			break;
+		}
+	}
 
 	console.log('1');
 
@@ -71,13 +114,13 @@ async function mySend(client, userId) {
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
-	//client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
+	// client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	client.channels.cache.get(CHANNEL_JM).send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	// canal.send(`Hay un nuevo contrincante ${member}`, attachment);
 }
 
 module.exports = {
-	fun: function (client, oldState, newState) {
+	fun: function(client, oldState, newState) {
 		/*
 		console.log(`OldState: Id: @${oldState.id}`);
 		console.log(`OldState: Connection: @${oldState.connection}`);
@@ -110,7 +153,7 @@ module.exports = {
 				newState.channelID === VOICE_CHANNEL_AMONG_US) {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
-				mySend(client, newState.id);
+				mySend(client, newState.id, channel);
 				// client.channels.cache.get(CHANNEL_FALL_GUYS).send();
 			}
 		}
