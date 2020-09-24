@@ -67,6 +67,7 @@ async function mySend(client, userId) {
 module.exports = {
 	fun: function (client, oldState, newState) {
 		console.log(' ');
+		/*
 		console.log(`OldState: Id: @${oldState.id}`);
 		console.log(`OldState: Connection: @${oldState.connection}`);
 		console.log(`OldState: Member: @${oldState.member}`);
@@ -84,6 +85,7 @@ module.exports = {
 		console.log(`NewState: Speaking: @${newState.speaking}`);
 		console.log(`NewState: Channel: @${newState.channel}`);
 		console.log(`NewState: ChannelID: @${newState.channelID}`);
+		*/
 
 		if (oldState != null && newState != null && newState.channelID != null &&
 			(oldState.channelID == null ||
@@ -97,7 +99,7 @@ module.exports = {
 				newState.channelID === VOICE_CHANNEL_AMONG_US) {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
-				//mySend(client, newState.id);
+				mySend(client, newState.id);
 				// client.channels.cache.get(CHANNEL_FALL_GUYS).send();
 			}
 		}
