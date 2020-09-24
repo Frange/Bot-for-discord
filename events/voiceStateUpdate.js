@@ -66,24 +66,39 @@ async function mySend(client, userId) {
 
 module.exports = {
 	fun: function (client, oldState, newState) {
-		console.log(`OldState: @${oldState}`);
-		console.log(`NewState: @${newState}`);
+		console.log(' ');
+		console.log(`OldState: @${oldState.id}`);
+		console.log(`OldState: @${oldState.connection}`);
+		console.log(`OldState: @${oldState.member}`);
+		console.log(`OldState: @${oldState.mute}`);
+		console.log(`OldState: @${oldState.selfMute}`);
+		console.log(`OldState: @${oldState.speaking}`);
+		console.log(`OldState: @${oldState.selfMute}`);
+		console.log(`OldState: @${oldState.channel}`);
+		console.log(`OldState: @${oldState.channelID}`);
+		console.log(' ');
+		console.log(`NewState: @${newState.id}`);
+		console.log(`NewState: @${newState.connection}`);
+		console.log(`NewState: @${newState.member}`);
+		console.log(`NewState: @${newState.mute}`);
+		console.log(`NewState: @${newState.selfMute}`);
+		console.log(`NewState: @${newState.speaking}`);
+		console.log(`NewState: @${newState.selfMute}`);
+		console.log(`NewState: @${newState.channel}`);
+		console.log(`NewState: @${newState.channelID}`);
+
 		if (newState != null) {
 			const userName = client.users.cache.find((u) => u.id === newState.id).username;
 			const channel = client.channels.cache.get(newState.channelID);
 
 			const message = `@${userName} se ha conectado al chat de voz ${channel}`;
 
-			if (newState.channelID === VOICE_CHANNEL_FALL_GUYS) {
+			if (newState.channelID === VOICE_CHANNEL_FALL_GUYS ||
+				newState.channelID === VOICE_CHANNEL_AMONG_US) {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
-				mySend(client, newState.id);
+				//mySend(client, newState.id);
 				// client.channels.cache.get(CHANNEL_FALL_GUYS).send();
-			} else if (newState.channelID === VOICE_CHANNEL_AMONG_US) {
-				console.log(' ');
-				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
-				mySend(client, newState.id);
-				// client.channels.cache.get(CHANNEL_AMONG_US).send(mySend (client, newState.id));
 			}
 		}
 	},
