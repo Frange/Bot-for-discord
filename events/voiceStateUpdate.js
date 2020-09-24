@@ -66,8 +66,8 @@ async function mySend(client, userId) {
 
 module.exports = {
 	fun: function (client, oldState, newState) {
-		console.log(OldState: `@${oldState}`);
-		console.log(NewState: `@${newState}`);
+		console.log(`OldState: @${oldState}`);
+		console.log(`NewState: @${newState}`);
 		if (newState != null) {
 			const userName = client.users.cache.find((u) => u.id === newState.id).username;
 			const channel = client.channels.cache.get(newState.channelID);
