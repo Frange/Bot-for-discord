@@ -62,7 +62,7 @@ const images4p = [
 	{ img: './img/4p-5.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
 ];
 
-function renderAvatar(user, position) {
+async function renderAvatar(user, position) {
 	const xCenter = 0;
 	const yCenter = 0;
 	const radious = 0;
