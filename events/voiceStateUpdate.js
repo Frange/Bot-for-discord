@@ -55,7 +55,7 @@ async function mySend(client, userId) {
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
 	//client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
-	client.channels.cache.get(CHANNEL_TESTING_BOTS).send(`Hay un nuevo contrincante ${user.username}`, attachment);
+	client.channels.cache.get(CHANNEL_JM).send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	// canal.send(`Hay un nuevo contrincante ${member}`, attachment);
 }
 
