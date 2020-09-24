@@ -66,6 +66,7 @@ function renderAvatar(user, position) {
 	const xCenter;
 	const yCenter;
 	const radious;
+	const randomNumber = 1; 
 
 	switch (position) {
 		case 1: {
