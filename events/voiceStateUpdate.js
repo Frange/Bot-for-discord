@@ -62,13 +62,13 @@ const images4p = [
 	{ img: './img/4p-5.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
 ];
 
-async function renderAvatar(user, position) {
+async function renderAvatar(user, position, images) {
 	let xCenter = 0;
 	let yCenter = 0;
 	let radious = 0;
 	const randomNumber = 1; 
 
-	console.log(`Position: @${position}`);
+	console.log(`Position: ${position}`);
 	switch (position) {
 		case 1: {
 			// Modify this 3 parameters to change size and position of the avatar image.
@@ -124,7 +124,7 @@ async function mySend(client, userId, channel) {
 		size++;
 	}
 
-	console.log(`Size: @${size}`);
+	console.log(`Size: ${size}`);
 
 	switch (size) {
 		case 1: {
@@ -149,7 +149,7 @@ async function mySend(client, userId, channel) {
 		if (memberID != userId) {
 			position++;
 			user = client.users.cache.get(memberID);
-			renderAvatar(user, position);
+			renderAvatar(user, position, images);
 		}
 	}
 
