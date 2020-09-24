@@ -68,6 +68,7 @@ async function renderAvatar(user, position) {
 	let radious = 0;
 	const randomNumber = 1; 
 
+	console.log(`Position: @${position}`);
 	switch (position) {
 		case 1: {
 			// Modify this 3 parameters to change size and position of the avatar image.
@@ -122,6 +123,8 @@ async function mySend(client, userId, channel) {
 	for (const [memberID, member] of channel.members) {
 		size++;
 	}
+
+	console.log(`Size: @${size}`);
 
 	switch (size) {
 		case 1: {
