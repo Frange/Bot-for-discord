@@ -145,6 +145,7 @@ async function mySend(client, userId, channel) {
 			break;
 		}
 	}
+	console.log(`1 `);
 
 	for (const [memberID, member] of channel.members) {
 		console.log(`MemberID: ${memberID}`);
