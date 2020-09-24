@@ -30,6 +30,7 @@ const VOICE_CHANNEL_AMONG_US = '753022620298903645';
 const CHANNEL_AMONG_US = '753022463155372193';
 
 const CHANNEL_TESTING_BOTS = '753361148585312367';
+const CHANNEL_JM = '758610849064681482';
 
 async function mySend(client, userId) {
 	const user = client.users.cache.get(userId);
@@ -44,17 +45,17 @@ async function mySend(client, userId) {
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
 	ctx.beginPath();
-	ctx.arc(325, 325, 100, 0, Math.PI * 2, true);
+	ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
 	ctx.closePath();
 	ctx.clip();
 
 	const avatar = await Canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
-	ctx.drawImage(avatar, 25, 25, 200, 200);
+	ctx.drawImage(avatar, 0, 0, 200, 200);
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
-	client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
-	// client.channels.cache.get(CHANNEL_TESTING_BOTS).send(`Hay un nuevo contrincante ${user.username}`, attachment);
+	//client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
+	client.channels.cache.get(CHANNEL_TESTING_BOTS).send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	// canal.send(`Hay un nuevo contrincante ${member}`, attachment);
 }
 
