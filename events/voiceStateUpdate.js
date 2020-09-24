@@ -45,7 +45,6 @@ async function mySend(client, userId) {
 
 	ctx.beginPath();
 	ctx.arc(325, 325, 100, 0, Math.PI * 2, true);
-	ctx.translate(50, 50);
 	ctx.closePath();
 	ctx.clip();
 
