@@ -26,7 +26,7 @@ client.once('ready', () => {
 });
 
 client.on('voiceStateUpdate', (oldState, newState) => {
-	// voiceStateUpdateEvent.fun(client, oldState, newState);
+	voiceStateUpdateEvent.fun(client, oldState, newState);
 });
 
 client.on('message', function(message) {
