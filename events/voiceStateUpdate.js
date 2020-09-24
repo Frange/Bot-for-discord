@@ -45,7 +45,7 @@ async function mySend(client, userId) {
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
 	// Modify this 3 parameters to change size and position of the avatar image.
-	const xCenter = 727; // Set X position of center circle.
+	const xCenter = 657; // Set X position of center circle.
 	const yCenter = 240; // Set Y position of center circle.
 	const radious = 100; // Avatar size = radious * 2.
 
