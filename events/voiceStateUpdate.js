@@ -180,6 +180,38 @@ async function mySend(client, userId, channel) {
 	// canal.send(`Hay un nuevo contrincante ${member}`, attachment);
 }
 
+async function mySend2(client, userId) {
+	const user = client.users.cache.get(userId);
+
+	const canvas = Canvas.createCanvas(854, 480);
+	const ctx = canvas.getContext('2d');
+
+	const background = await Canvas.loadImage('./img/4p-1.jpg');
+	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+	ctx.strokeStyle = '#74037b';
+	ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+	// Modify this 3 parameters to change size and position of the avatar image.
+	const xCenter = 600; // Set X position of center circle.
+	const yCenter = 240; // Set Y position of center circle.
+	const radious = 150; // Avatar size = radious * 2.
+
+	ctx.beginPath();
+	ctx.arc(xCenter, yCenter, radious, 0, Math.PI * 2, true);
+	ctx.closePath();
+	ctx.clip();
+
+	const avatar = await Canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
+	ctx.drawImage(avatar, (xCenter - radious), (yCenter - radious), (radious * 2), (radious * 2));
+
+	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
+
+	//client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
+	client.channels.cache.get(CHANNEL_JM).send(`Hay un nuevo contrincante ${user.username}`, attachment);
+	// canal.send(`Hay un nuevo contrincante ${member}`, attachment);
+}
+
 module.exports = {
 	fun: function (client, oldState, newState) {
 		/*
@@ -214,7 +246,8 @@ module.exports = {
 				newState.channelID === VOICE_CHANNEL_AMONG_US) {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
-				mySend(client, newState.id, channel);
+				//mySend(client, newState.id, channel);
+				mySend2(client, newState.id);
 				// client.channels.cache.get(CHANNEL_FALL_GUYS).send();
 			}
 		}
