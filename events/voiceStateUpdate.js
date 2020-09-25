@@ -217,7 +217,14 @@ function removeMessages(client, channel) {
 	// console.log(`channel.message.member: ${channel.message.member}`);
 	// console.log(`channel.message.author: ${channel.message.author}`);
 	// console.log(`channel.message.memberID: ${channel.message.memberID}`);
+
 	console.log(`channel.id: ${channel.id}`);
+
+	for (const [author, id] of channel.messages) {
+		console.log(`author: ${author}`);
+		console.log(`id: ${id}`);
+	}
+	
 	console.log(`channel: ${channel}`);
 
 }
