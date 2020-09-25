@@ -207,15 +207,15 @@ async function mySend2(client, userId) {
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
-	//client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
+	// client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	client.channels.cache.get(CHANNEL_JM).send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	// canal.send(`Hay un nuevo contrincante ${member}`, attachment);
 }
 
 function removeMessages(client, channel) {
 	
-	//console.log(`channel.message.member: ${channel.message.member}`);
-	console.log(`channel.message.author: ${channel.message.author}`);
+	// console.log(`channel.message.member: ${channel.message.member}`);
+	// console.log(`channel.message.author: ${channel.message.author}`);
 	console.log(`channel.message.memberID: ${channel.message.memberID}`);
 	console.log(`channel.id: ${channel.id}`);
 
