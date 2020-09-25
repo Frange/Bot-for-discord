@@ -183,19 +183,19 @@ async function mySend(client, userId, channel) {
 async function mySend2(client, userId) {
 	const user = client.users.cache.get(userId);
 
-	const canvas = Canvas.createCanvas(854, 480);
+	const canvas = Canvas.createCanvas(images3p[0].xsize, images3p[0].ysize);
 	const ctx = canvas.getContext('2d');
 
-	const background = await Canvas.loadImage('./img/4p-1.jpg');
+	const background = await Canvas.loadImage(images3p[0].img);
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
 	// Modify this 3 parameters to change size and position of the avatar image.
-	const xCenter = 600; // Set X position of center circle.
-	const yCenter = 240; // Set Y position of center circle.
-	const radious = 150; // Avatar size = radious * 2.
+	const xCenter = images3p[0].x1; // Set X position of center circle.
+	const yCenter = images3p[0].x2; // Set Y position of center circle.
+	const radious = images3p[0].rad; // Avatar size = radious * 2.
 
 	ctx.beginPath();
 	ctx.arc(xCenter, yCenter, radious, 0, Math.PI * 2, true);
