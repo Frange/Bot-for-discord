@@ -156,8 +156,12 @@ async function mySend(client, userId, channel) {
 		console.log(`MemberID: ${memberID}`);
 		if (memberID != userId) {
 			position++;
+			console.log(`jm 1 `);
 			user = client.users.cache.get(memberID);
+
+			console.log(`jm 2 `);
 			renderAvatar(user, position, images3p, ctx);
+			console.log(`jm 3 `);
 		}
 	}
 
