@@ -216,8 +216,9 @@ function removeMessages(client, channel) {
 	
 	// console.log(`channel.message.member: ${channel.message.member}`);
 	// console.log(`channel.message.author: ${channel.message.author}`);
-	console.log(`channel.message.memberID: ${channel.message.memberID}`);
+	// console.log(`channel.message.memberID: ${channel.message.memberID}`);
 	console.log(`channel.id: ${channel.id}`);
+	console.log(`channel: ${channel}`);
 
 }
 
