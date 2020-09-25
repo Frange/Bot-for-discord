@@ -154,6 +154,8 @@ async function mySend(client, userId, channel) {
 
 	for (const [memberID, member] of channel.members) {
 		console.log(`MemberID: ${memberID}`);
+		console.log(`userId: ${userId}`);
+		console.log(`user: ${user}`);
 		if (memberID != userId) {
 			position++;
 			console.log(`jm 1 `);
