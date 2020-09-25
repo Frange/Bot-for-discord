@@ -213,35 +213,7 @@ async function mySend2(client, userId) {
 }
 
 function removeMessages(client, channel) {
-	
-	// console.log(`channel.message.member: ${channel.message.member}`);
-	// console.log(`channel.message.author: ${channel.message.author}`);
-	// console.log(`channel.message.memberID: ${channel.message.memberID}`);
-
-	console.log(`channel.id: ${channel.id}`);
-
-	// for (const [author, id] of channel.messages) {
-	// 	console.log(`author: ${author}`);
-	//	console.log(`id: ${id}`);
-	// }
-
-	channel.fetchMessages().then(async messages => {
-		console.log(`${messages.size} procuradas.`);
-	
-		let finalArray = [];
-	
-		const putInArray = async (data) => finalArray.push(data);
-		const handleTime = (timestamp) => moment(timestamp).format("DD/MM/YYYY - hh:mm:ss a").replace("pm", "PM").reaplce("am", "AM"); 
-	
-		for (const message of messages.array().reverse()) await putInArray(`${handleTime(message.timestamp)} ${msg.author.username} : ${msg.content}`); 
-	
-		console.log(finalArray);
-		console.log(finalArray.length);
-	
-	});
-
 	console.log(`channel: ${channel}`);
-
 }
 
 module.exports = {
