@@ -102,8 +102,11 @@ async function renderAvatar(user, position, images, ctx) {
 	ctx.closePath();
 	ctx.clip();
 
+
+	console.log(`a `);
 	const avatar = await Canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
 	ctx.drawImage(avatar, (xCenter - radious), (yCenter - radious), (radious * 2), (radious * 2));
+	console.log(`b `);
 }
 
 async function mySend(client, userId, channel) {
