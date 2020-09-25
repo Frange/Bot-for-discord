@@ -50,16 +50,16 @@ const images2p = [
 ];
 
 const images3p = [
-	{ img: './img/3p-1.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, x2: 250, y2: 150, x3: 410, y3: 150, rad: 40 },
-	{ img: './img/3p-2.jpg', xsize: 640, ysize: 360, x1: 325, y1: 127, x2: 250, y2: 150, x3: 410, y3: 150, rad: 40 },
+	{ img: './img/3p-1.jpg', xsize: 640, ysize: 360, x1: 330, y1: 110, x2: 250, y2: 150, x3: 410, y3: 150, rad: 40 },
+	{ img: './img/3p-2.jpg', xsize: 640, ysize: 360, x1: 325, y1: 110, x2: 250, y2: 150, x3: 410, y3: 150, rad: 40 },
 ];
 
 const images4p = [
-	{ img: './img/4p-1.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
-	{ img: './img/4p-2.jpg', xsize: 640, ysize: 360, x1: 325, y1: 127, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
-	{ img: './img/4p-3.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
-	{ img: './img/4p-4.jpg', xsize: 640, ysize: 360, x1: 325, y1: 127, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
-	{ img: './img/4p-5.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
+	{ img: './img/4p-1.jpg', xsize: 640, ysize: 360, x1: 330, y1: 110, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
+	{ img: './img/4p-2.jpg', xsize: 640, ysize: 360, x1: 325, y1: 110, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
+	{ img: './img/4p-3.jpg', xsize: 640, ysize: 360, x1: 330, y1: 110, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
+	{ img: './img/4p-4.jpg', xsize: 640, ysize: 360, x1: 325, y1: 110, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
+	{ img: './img/4p-5.jpg', xsize: 640, ysize: 360, x1: 330, y1: 110, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
 ];
 
 async function renderAvatar(user, position, images, ctx) {
@@ -224,7 +224,7 @@ function removeMessages(client, channel) {
 		console.log(`author: ${author}`);
 		console.log(`id: ${id}`);
 	}
-	
+
 	console.log(`channel: ${channel}`);
 
 }
