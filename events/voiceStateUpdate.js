@@ -152,11 +152,15 @@ async function mySend(client, userId, channel) {
 	}
 	*/
 
+	console.log(` frg 1`);
+	renderAvatar(user, position, images3p, ctx);
+	console.log(` frg 2`);
+
 	for (const [memberID, member] of channel.members) {
 		console.log(`MemberID: ${memberID}`);
 		console.log(`userId: ${userId}`);
 		console.log(`user: ${user}`);
-		if (memberID != userId) {
+		// if (memberID != userId) {
 			position++;
 			console.log(`jm 1 `);
 			user = client.users.cache.get(memberID);
@@ -164,7 +168,7 @@ async function mySend(client, userId, channel) {
 			console.log(`jm 2 `);
 			renderAvatar(user, position, images3p, ctx);
 			console.log(`jm 3 `);
-		}
+		// }
 	}
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
