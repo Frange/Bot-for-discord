@@ -156,6 +156,7 @@ async function mySend(client, userId, channel) {
 	renderAvatar(user, position, images3p, ctx);
 	console.log(` frg 2`);
 
+	/*
 	for (const [memberID, member] of channel.members) {
 		console.log(`MemberID: ${memberID}`);
 		console.log(`userId: ${userId}`);
@@ -170,6 +171,7 @@ async function mySend(client, userId, channel) {
 			console.log(`jm 3 `);
 		// }
 	}
+	*/
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
