@@ -194,7 +194,7 @@ async function mySend2(client, userId) {
 
 	// Modify this 3 parameters to change size and position of the avatar image.
 	const xCenter = images3p[0].x1; // Set X position of center circle.
-	const yCenter = images3p[0].x2; // Set Y position of center circle.
+	const yCenter = images3p[0].y2; // Set Y position of center circle.
 	const radious = images3p[0].rad; // Avatar size = radious * 2.
 
 	ctx.beginPath();
@@ -210,6 +210,15 @@ async function mySend2(client, userId) {
 	//client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	client.channels.cache.get(CHANNEL_JM).send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	// canal.send(`Hay un nuevo contrincante ${member}`, attachment);
+}
+
+function removeMessages(client, channel) {
+	
+	console.log(`channel.message.member: ${channel.message.member}`);
+	console.log(`channel.message.author: ${channel.message.author}`);
+	console.log(`channel.message.memberID: ${channel.message.memberID}`);
+	console.log(`channel.id: ${channel.id}`);
+
 }
 
 module.exports = {
@@ -239,6 +248,8 @@ module.exports = {
 				(oldState.channelID != null && oldState.channelID != newState.channelID))) {
 			const userName = client.users.cache.find((u) => u.id === newState.id).username;
 			const channel = client.channels.cache.get(newState.channelID);
+
+			removeMessages(client, channel);
 
 			const message = `@${userName} se ha conectado al chat de voz ${channel}`;
 
