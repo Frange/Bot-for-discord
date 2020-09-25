@@ -112,7 +112,7 @@ async function renderAvatar(user, position, images, ctx) {
 async function mySend(client, userId, channel) {
 	const randomNumber = 1;
 	//let images = images3p;
-	let size = 0, position = 0;
+	let size = 0, position = 1;
 
 	let user = client.users.cache.get(userId);
 
