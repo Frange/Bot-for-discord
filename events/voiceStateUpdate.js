@@ -210,7 +210,7 @@ async function mySend2(client, userId) {
 	ctx.drawImage(avatar, (xCenter - radious), (yCenter - radious), (radious * 2), (radious * 2));
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
-
+	
 	// client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	client.channels.cache.get(CHANNEL_JM).send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	// canal.send(`Hay un nuevo contrincante ${member}`, attachment);
@@ -264,7 +264,8 @@ module.exports = {
 				console.log(' AMONG US');
 
 				console.log(`OldState: oldState.member: @${oldState.member}`);
-				
+				console.log(`OldState: USER_FRANGE: @${USER_FRANGE}`);
+
 				console.log(`OldState: Mute: @${oldState.mute}`);
 				console.log(`OldState: SelfMute: @${oldState.selfMute}`);
 				console.log(`OldState: Speaking: @${oldState.speaking}`);
