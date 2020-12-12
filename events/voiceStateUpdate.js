@@ -256,7 +256,7 @@ module.exports = {
 		console.log(' ');
 		if (oldState != null && oldState.channelID != null) {
 			const oUserName = client.users.cache.find((u) => u.id === oldState.id).username;
-			const oChannelId = client.channels.cache.get(oldState.channelID);
+			const oChannelId = oldState.channelID;
 			console.log(`OldState: oUserName: @${oUserName}`);
 			console.log(`OldState: oChannelId: @${oChannelId}`);
 
