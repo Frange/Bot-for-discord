@@ -270,7 +270,7 @@ module.exports = {
 				console.log(`OldState: SelfMute: @${oldState.selfMute}`);
 				console.log(`OldState: Speaking: @${oldState.speaking}`);
 
-				if (oldState.member === USER_FRANGE) {
+				if (oldState.member == USER_FRANGE) {
 					if (oldState.mute) {
 						// ANTES ESTABA MUTEADO
 						console.log(' ANTES ESTABA MUTEADO');
