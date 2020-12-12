@@ -281,7 +281,7 @@ module.exports = {
 							console.log(' ANTES NO ESTABA SELF MUTEADO');
 						}
 					} else {
-						console.log(' ANTES ESTABA MUTEADO');
+						console.log(' ANTES ESTABA NO MUTEADO');
 
 						if (oldState.selfMute) {
 							console.log(' ANTES ESTABA SELF MUTEADO');
