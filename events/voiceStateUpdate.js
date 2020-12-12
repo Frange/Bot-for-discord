@@ -37,6 +37,8 @@ const CHANNEL_AMONG_US = '753022463155372193';
 const CHANNEL_TESTING_BOTS = '753361148585312367';
 const CHANNEL_JM = '758610849064681482';
 
+const USER_FRANGE = '308564113431461888';
+
 const images1p = [
 	{ img: './newchallenger.jpg', xsize: 854, ysize: 480, x1: 600, y1: 240, rad: 130 },
 	{ img: './img/1p-1.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, rad: 40 },
@@ -264,6 +266,27 @@ module.exports = {
 				console.log(`OldState: Mute: @${oldState.mute}`);
 				console.log(`OldState: SelfMute: @${oldState.selfMute}`);
 				console.log(`OldState: Speaking: @${oldState.speaking}`);
+
+				if (oldState.member === USER_FRANGE) {
+					if (oldState.mute) {
+						// ANTES ESTABA MUTEADO
+						console.log(' ANTES ESTABA MUTEADO');
+
+						if (oldState.selfMute) {
+							console.log(' ANTES ESTABA SELF MUTEADO');
+						} else {
+							console.log(' ANTES NO ESTABA SELF MUTEADO');
+						}
+					} else {
+						console.log(' ANTES ESTABA MUTEADO');
+
+						if (oldState.selfMute) {
+							console.log(' ANTES ESTABA SELF MUTEADO');
+						} else {
+							console.log(' ANTES NO ESTABA SELF MUTEADO');
+						}
+					}
+				}
 			}
 		}
 
