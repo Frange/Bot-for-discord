@@ -19,8 +19,8 @@ module.exports = {
 		console.log(' ');
 		console.log(' ');
 		console.log(' ');
-		const user = client.users.cache.get('308564113431461888');
-		user.send('El trolasho ha vuelto');
+		// const user = client.users.cache.get('308564113431461888');
+		// user.send('El trolasho ha vuelto');
 
 		/*
 		 client.channels.cache
