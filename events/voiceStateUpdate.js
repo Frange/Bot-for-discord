@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+/* eslint-disable no-irregular-whitespace */
 /* eslint-disable indent */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-inline-comments */
@@ -66,7 +68,7 @@ async function renderAvatar(user, position, images, ctx) {
 	let xCenter = 0;
 	let yCenter = 0;
 	let radious = 0;
-	const randomNumber = 1; 
+	const randomNumber = 1;
 
 	console.log(`Position: ${position}`);
 	switch (position) {
@@ -103,18 +105,18 @@ async function renderAvatar(user, position, images, ctx) {
 	ctx.clip();
 
 
-	console.log(`a `);
+	console.log('a ');
 	const avatar = await Canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
 	ctx.drawImage(avatar, (xCenter - radious), (yCenter - radious), (radious * 2), (radious * 2));
-	console.log(`b `);
+	console.log('b ');
 }
 
 async function mySend(client, userId, channel) {
 	const randomNumber = 1;
-	//let images = images3p;
+	// let images = images3p;
 	let size = 0, position = 1;
 
-	let user = client.users.cache.get(userId);
+	const user = client.users.cache.get(userId);
 
 	const canvas = Canvas.createCanvas(images3p[randomNumber].xsize, images3p[randomNumber].ysize);
 	const ctx = canvas.getContext('2d');
@@ -129,7 +131,7 @@ async function mySend(client, userId, channel) {
 	}
 
 	console.log(`Size: ${size}`);
-	console.log(` `);
+	console.log(' ');
 
 	/*
 	switch (size) {
@@ -152,9 +154,9 @@ async function mySend(client, userId, channel) {
 	}
 	*/
 
-	console.log(` frg 1`);
+	console.log(' frg 1');
 	renderAvatar(user, position, images3p, ctx);
-	console.log(` frg 2`);
+	console.log(' frg 2');
 
 	/*
 	for (const [memberID, member] of channel.members) {
@@ -217,7 +219,7 @@ function removeMessages(client, channel) {
 }
 
 module.exports = {
-	fun: function (client, oldState, newState) {
+	fun: function(client, oldState, newState) {
 		/*
 		console.log(`OldState: Id: @${oldState.id}`);
 		console.log(`OldState: Connection: @${oldState.connection}`);
@@ -238,6 +240,28 @@ module.exports = {
 		console.log(`NewState: ChannelID: @${newState.channelID}`);
 		*/
 
+		console.log(`OldState: Id: @${oldState.id}`);
+		console.log(`OldState: Connection: @${oldState.connection}`);
+		console.log(`OldState: Member: @${oldState.member}`);
+		console.log(`OldState: Mude: @${oldState.mute}`);
+		console.log(`OldState: SelfMute: @${oldState.selfMute}`);
+		console.log(`OldState: Speaking: @${oldState.speaking}`);
+		console.log(`OldState: channel: @${oldState.channel}`);
+		console.log(`OldState: channelID: @${oldState.channelID}`);
+		console.log(' ');
+
+		if (oldState != null && oldState.channelID != null) {
+			const oUserName = client.users.cache.find((u) => u.id === newState.id).username;
+			const oChannelId = client.channels.cache.get(newState.channelID);
+			console.log(`OldState: oUserName: @${oUserName}`);
+			console.log(`OldState: oChannelId: @${oChannelId}`);
+
+			if (oChannelId === VOICE_CHANNEL_AMONG_US) {
+				console.log(' AMONG US');
+			}
+		}
+
+		/*
 		if (oldState != null && newState != null && newState.channelID != null &&
 			(oldState.channelID == null ||
 				(oldState.channelID != null && oldState.channelID != newState.channelID))) {
@@ -257,5 +281,6 @@ module.exports = {
 				// client.channels.cache.get(CHANNEL_FALL_GUYS).send();
 			}
 		}
+		*/
 	},
 };
