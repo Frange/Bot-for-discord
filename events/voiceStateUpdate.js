@@ -238,21 +238,23 @@ module.exports = {
 		console.log(`NewState: Speaking: @${newState.speaking}`);
 		console.log(`NewState: Channel: @${newState.channel}`);
 		console.log(`NewState: ChannelID: @${newState.channelID}`);
+
+
+2020-12-12T12:01:21.290282+00:00 app[worker.1]: OldState: oUserName: @Frange
+2020-12-12T12:01:21.290348+00:00 app[worker.1]: OldState: oChannelId: @<#753020407589765290>
+2020-12-12T12:01:27.942376+00:00 app[worker.1]: OldState: Id: @308564113431461888
+2020-12-12T12:01:27.942477+00:00 app[worker.1]: OldState: Connection: @null
+2020-12-12T12:01:27.942572+00:00 app[worker.1]: OldState: Member: @<@308564113431461888>
+2020-12-12T12:01:27.942633+00:00 app[worker.1]: OldState: Mude: @false
+2020-12-12T12:01:27.942701+00:00 app[worker.1]: OldState: SelfMute: @false
+2020-12-12T12:01:27.942764+00:00 app[worker.1]: OldState: Speaking: @null
+2020-12-12T12:01:27.942833+00:00 app[worker.1]: OldState: channel: @<#753020407589765290>
+2020-12-12T12:01:27.942884+00:00 app[worker.1]: OldState: channelID: @753020407589765290
 		*/
 
-		console.log(`OldState: Id: @${oldState.id}`);
-		console.log(`OldState: Connection: @${oldState.connection}`);
-		console.log(`OldState: Member: @${oldState.member}`);
-		console.log(`OldState: Mude: @${oldState.mute}`);
-		console.log(`OldState: SelfMute: @${oldState.selfMute}`);
-		console.log(`OldState: Speaking: @${oldState.speaking}`);
-		console.log(`OldState: channel: @${oldState.channel}`);
-		console.log(`OldState: channelID: @${oldState.channelID}`);
-		console.log(' ');
-
 		if (oldState != null && oldState.channelID != null) {
-			const oUserName = client.users.cache.find((u) => u.id === newState.id).username;
-			const oChannelId = client.channels.cache.get(newState.channelID);
+			const oUserName = client.users.cache.find((u) => u.id === oldState.id).username;
+			const oChannelId = client.channels.cache.get(oldState.channelID);
 			console.log(`OldState: oUserName: @${oUserName}`);
 			console.log(`OldState: oChannelId: @${oChannelId}`);
 
