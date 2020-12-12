@@ -257,11 +257,13 @@ module.exports = {
 		if (oldState != null && oldState.channelID != null) {
 			const oUserName = client.users.cache.find((u) => u.id === oldState.id).username;
 			const oChannelId = oldState.channelID;
-			console.log(`OldState: oUserName: @${oUserName}`);
-			console.log(`OldState: oChannelId: @${oChannelId}`);
 
 			if (oChannelId === VOICE_CHANNEL_AMONG_US) {
 				console.log(' AMONG US');
+
+				console.log(`OldState: Mute: @${oldState.mute}`);
+				console.log(`OldState: SelfMute: @${oldState.selfMute}`);
+				console.log(`OldState: Speaking: @${oldState.speaking}`);
 			}
 		}
 

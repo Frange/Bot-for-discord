@@ -21,14 +21,6 @@ const messageEvent = require('./events/message.js');
 // EXPORTS
 // module.exports = { client: client, fs: fs, canvas: canvas, embed: MessageEmbed, cmd: cmd };
 
-console.log(' ');
-console.log(' ');
-console.log(' ');
-console.log(' ');
-console.log(' NEW BUILD');
-console.log(' ');
-console.log(' ');
-
 client.once('ready', () => {
 	readyEvent.fun(client);
 });
