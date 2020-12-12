@@ -252,6 +252,8 @@ module.exports = {
 2020-12-12T12:01:27.942884+00:00 app[worker.1]: OldState: channelID: @753020407589765290
 		*/
 
+		console.log(' VoiceStateUpdate - FUN ');
+		console.log(' ');
 		if (oldState != null && oldState.channelID != null) {
 			const oUserName = client.users.cache.find((u) => u.id === oldState.id).username;
 			const oChannelId = client.channels.cache.get(oldState.channelID);
