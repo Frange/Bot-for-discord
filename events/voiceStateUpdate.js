@@ -263,6 +263,8 @@ module.exports = {
 			if (oChannelId === VOICE_CHANNEL_AMONG_US) {
 				console.log(' AMONG US');
 
+				console.log(`OldState: oldState.member: @${oldState.member}`);
+				
 				console.log(`OldState: Mute: @${oldState.mute}`);
 				console.log(`OldState: SelfMute: @${oldState.selfMute}`);
 				console.log(`OldState: Speaking: @${oldState.speaking}`);
