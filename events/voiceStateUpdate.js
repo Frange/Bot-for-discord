@@ -201,7 +201,7 @@ function muteForAmongUs(client, oldState, newState) {
 			if (oldState.id === USER_FRANGE) {
 				if (oldState.mute) {
 					// ANTES ESTABA MUTEADO
-					voiceAux.setMuteAll(client, oChannelId, false);
+					setMuteAll(client, oChannelId, false);
 					if (oldState.selfMute) {
 						console.log(' ANTES ESTABA MUTEADO Y SELF MUTEADO');
 						// muteAll(true);
@@ -211,7 +211,7 @@ function muteForAmongUs(client, oldState, newState) {
 					}
 				} else {
 					console.log(' ANTES ESTABA NO MUTEADO');
-					voiceAux.setMuteAll(true);
+					setMuteAll(true);
 
 					if (oldState.selfMute) {
 						console.log(' ANTES ESTABA SELF MUTEADO');
