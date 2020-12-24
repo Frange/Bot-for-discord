@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 
 module.exports = {
-	fun: function(constants, client, MessageEmbed, cmd, message) {
+	fun: function(constants, messageAux, client, MessageEmbed, cmd, message) {
 
 		if (message.author.bot) return;
 
@@ -35,12 +35,7 @@ module.exports = {
                     break;
                 }
                 case constants.COMMAND_CLEAR: {
-                    message.channel.bulkDelete(100);
-                    message.channel.bulkDelete(100);
-                    message.channel.bulkDelete(100);
-                    message.channel.bulkDelete(100);
-                    message.channel.bulkDelete(100);
-                    // message.channel.send("Limpieza de Sable!!").then(msg => msg.delete({timeout: 60000}));
+                    messageAux.clear(message);
                     break;
                 }
                 /*

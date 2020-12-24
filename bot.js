@@ -32,7 +32,7 @@ client.on('voiceStateUpdate', (oldState, newState) => {
 });
 
 client.on('message', function(message) {
-	messageEvent.fun(constants, client, MessageEmbed, commands, message);
+	messageEvent.fun(constants, messageAux, client, MessageEmbed, commands, message);
 });
 
 client.login(process.env.TOKEN);
