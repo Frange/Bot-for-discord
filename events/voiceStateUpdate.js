@@ -247,7 +247,7 @@ function showLogs(oldState, newState) {
 }
 
 module.exports = {
-	fun: function(client, oldState, newState) {
+	fun: function(constants, client, oldState, newState) {
 		showLogs(oldState, newState);
 		muteForAmongUs(client, oldState, newState);
 
@@ -266,8 +266,8 @@ module.exports = {
 				newState.channelID === VOICE_CHANNEL_AMONG_US) {
 				console.log(' ');
 				console.log(`VoiceStateUpdate - ${userName} se ha conecado a ${channel}`);
-				//mySend(client, newState.id, channel);
-				mySend2(client, newState.id);
+				//mySend(constants.voiceAux, client, newState.id, channel);
+				mySend2(constants.voiceAux, client, newState.id);
 				// client.channels.cache.get(CHANNEL_FALL_GUYS).send();
 			}
 		}
