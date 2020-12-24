@@ -1,11 +1,6 @@
 /* eslint-disable no-unused-vars */
 
 // From JavaScript
-const Discord = require('discord.js');
-const { Client, MessageEmbed } = require('discord.js');
-const client = new Discord.Client();
-client.commands = new Discord.Collection();
-
 const canvas = require('canvas');
 const fs = require('fs');
 
