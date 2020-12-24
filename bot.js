@@ -2,13 +2,12 @@
 /* eslint-disable no-undef */
 /* eslint-disable indent */
 
-const Discord = require('discord.js');
+const constants = require('./events/auxiliar/constants.js');
 const { Client, MessageEmbed } = require('discord.js');
-const client = new Discord.Client();
-client.commands = new Discord.Collection();
+const client = new constants.Discord.Client();
+client.commands = new constants.Discord.Collection();
 
 // Imports
-const constants = require('./events/auxiliar/constants.js');
 const voiceAux = require('./events/auxiliar/voiceAux.js');
 
 // COMMANDS

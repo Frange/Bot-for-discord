@@ -26,8 +26,8 @@
 */
 
 
-const Discord = require('discord.js');
-const Canvas = require('canvas');
+// const Discord = require('discord.js');
+// const Canvas = require('canvas');
 
 // const constants = require('./events/auxiliar/js');
 // const voiceAux = require('./events/auxiliar/voiceAux.js');
@@ -72,17 +72,17 @@ const images4p = [
 	{ img: './img/4p-5.jpg', xsize: 640, ysize: 360, x1: 330, y1: 110, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
 ];
 
-async function mySend(voiceAux, client, userId, channel) {
+async function mySend(constants, voiceAux, client, userId, channel) {
 	const randomNumber = 1;
 	// let images = images3p;
 	let size = 0, position = 1;
 
 	const user = client.users.cache.get(userId);
 
-	const canvas = Canvas.createCanvas(images3p[randomNumber].xsize, images3p[randomNumber].ysize);
+	const canvas = constants.canvas.createCanvas(images3p[randomNumber].xsize, images3p[randomNumber].ysize);
 	const ctx = canvas.getContext('2d');
 
-	const background = await Canvas.loadImage(images3p[randomNumber].img);
+	const background = await constants.canvas.loadImage(images3p[randomNumber].img);
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
@@ -136,20 +136,20 @@ async function mySend(voiceAux, client, userId, channel) {
 	}
 	*/
 
-	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
+	const attachment = new constants.Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
 	// client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	client.channels.cache.get(CHANNEL_JM).send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	// canal.send(`Hay un nuevo contrincante ${member}`, attachment);
 }
 
-async function mySend2(client, userId) {
+async function mySend2(constants, client, userId) {
 	const user = client.users.cache.get(userId);
 
-	const canvas = Canvas.createCanvas(images3p[0].xsize, images3p[0].ysize);
+	const canvas = constants.canvas.createCanvas(images3p[0].xsize, images3p[0].ysize);
 	const ctx = canvas.getContext('2d');
 
-	const background = await Canvas.loadImage(images3p[0].img);
+	const background = await constants.canvas.loadImage(images3p[0].img);
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
 	ctx.strokeStyle = '#74037b';
@@ -165,7 +165,7 @@ async function mySend2(client, userId) {
 	ctx.closePath();
 	ctx.clip();
 
-	const avatar = await Canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
+	const avatar = await constants.canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
 	ctx.drawImage(avatar, (xCenter - radious), (yCenter - radious), (radious * 2), (radious * 2));
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');

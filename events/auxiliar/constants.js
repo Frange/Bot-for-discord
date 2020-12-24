@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 // From JavaScript
+const Discord = require('discord.js');
 const canvas = require('canvas');
 const fs = require('fs');
 
