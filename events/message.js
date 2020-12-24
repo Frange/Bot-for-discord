@@ -27,7 +27,7 @@ module.exports = {
                         // .setDescription("-------------------------------------------")
                         .addField('!h -> HELP', 'Muestra la lista de comandos.')
                         .addField('!s -> SAY', 'Hace hablar a El trolasho con el texto que le pongas.');
-                    message.channel.send(embed);
+                    messageAux.sendHelpMessage(message, embed);
                     break;
                 }
                 case constants.COMMAND_SAY: {

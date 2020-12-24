@@ -13,6 +13,10 @@ function sendMessage(client, channelId, message) {
 	client.channels.cache.get(channelId).send(message);
 }
 
+function sendHelpMessage(message, embed) {
+	message.channel.send(embed);
+}
+
 function say(message, args) {
 	const sayMessage = args.join(' ');
 	message.delete();
