@@ -18,6 +18,16 @@ const CHANNEL_JM = '758610849064681482';
 // User ids
 const USER_FRANGE = '308564113431461888';
 
+// Rol ids
+const ROL_GAYOLO = '753022904618319962';
+
+// Commands
+const COMMAND_SAY = 's';
+const COMMAND_HELP = 'h';
+const COMMAND_CLEAR = 'c';
+// const COMMAND_JOIN = 'j';
+
+
 // Images
 const images1p = [
 	{ img: './newchallenger.jpg', xsize: 854, ysize: 480, x1: 600, y1: 240, rad: 130 },

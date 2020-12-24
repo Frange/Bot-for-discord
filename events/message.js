@@ -1,17 +1,7 @@
 /* eslint-disable indent */
 
-// const ROL_FRANGE = '308564113431461888';
-const ROL_GAYOLO = '753022904618319962';
-
-const COMMAND_SAY = 's';
-const COMMAND_HELP = 'h';
-const COMMAND_CLEAR = 'c';
-// const COMMAND_JOIN = 'j';
-
-// const CHANNEL_TESTING_BOTS = '753361148585312367';
-
 module.exports = {
-	fun: function(client, MessageEmbed, cmd, message) {
+	fun: function(constants, client, MessageEmbed, cmd, message) {
 
 		if (message.author.bot) return;
 
@@ -23,14 +13,14 @@ module.exports = {
 			return;
         }
 		else {
-			if (!message.member.roles.cache.has(ROL_GAYOLO)) return;
+			if (!message.member.roles.cache.has(constants.ROL_GAYOLO)) return;
 
 			const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
 			const command = args.shift().toLowerCase();
 
 			console.log(`Usuario: ${message.member}`);
 			switch (command) {
-                case COMMAND_HELP: {
+                case constants.COMMAND_HELP: {
                     const embed = new MessageEmbed()
                         .setTitle('Ayuda General del Bot')
                         .setColor(0xff0000)
@@ -40,11 +30,11 @@ module.exports = {
                     message.channel.send(embed);
                     break;
                 }
-                case COMMAND_SAY: {
+                case constants.COMMAND_SAY: {
                     cmd.say(message, args);
                     break;
                 }
-                case COMMAND_CLEAR: {
+                case constants.COMMAND_CLEAR: {
                     message.channel.bulkDelete(100);
                     message.channel.bulkDelete(100);
                     message.channel.bulkDelete(100);
@@ -54,7 +44,7 @@ module.exports = {
                     break;
                 }
                 /*
-                case COMMAND_JOIN: {
+                case constants.COMMAND_JOIN: {
                     message.delete();
                     client.emit('guildMemberAdd', message.member);
                     break;
