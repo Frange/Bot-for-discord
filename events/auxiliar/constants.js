@@ -1,7 +1,15 @@
 /* eslint-disable no-unused-vars */
 
-const Discord = require('discord.js');
+// From JavaScript
+const { Client, MessageEmbed } = require('discord.js');
+const client = new Discord.Client();
+client.commands = new Discord.Collection();
 
+const Discord = require('discord.js');
+const canvas = require('canvas');
+const fs = require('fs');
+
+// Channel ids
 const VOICE_CHANNEL_FALL_GUYS = '481523402645962759';
 const CHANNEL_FALL_GUYS = '750723648100237363';
 
@@ -11,8 +19,10 @@ const CHANNEL_AMONG_US = '753022463155372193';
 const CHANNEL_TESTING_BOTS = '753361148585312367';
 const CHANNEL_JM = '758610849064681482';
 
+// User ids
 const USER_FRANGE = '308564113431461888';
 
+// Images
 const images1p = [
 	{ img: './newchallenger.jpg', xsize: 854, ysize: 480, x1: 600, y1: 240, rad: 130 },
 	{ img: './img/1p-1.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, rad: 40 },

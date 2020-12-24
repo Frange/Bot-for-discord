@@ -2,16 +2,14 @@
 /* eslint-disable no-undef */
 /* eslint-disable indent */
 
-const Discord = require('discord.js');
-const { Client, MessageEmbed } = require('discord.js');
-const client = new Discord.Client();
-client.commands = new Discord.Collection();
+// const Discord = require('discord.js');
 
-const canvas = require('canvas');
-const fs = require('fs');
+// Imports
+const constants = require('./events/auxiliar/constants.js');
+const voiceAux = require('./events/auxiliar/voiceAux.js');
 
 // COMMANDS
-const cmd = require('./commands/say.js');
+const commands = require('./commands/say.js');
 
 // EVENTS
 const readyEvent = require('./events/ready.js');
@@ -21,16 +19,16 @@ const messageEvent = require('./events/message.js');
 // EXPORTS
 // module.exports = { client: client, fs: fs, canvas: canvas, embed: MessageEmbed, cmd: cmd };
 
-client.once('ready', () => {
-	readyEvent.fun(client);
+constants.client.once('ready', () => {
+	readyEvent.fun(constants.client);
 });
 
-client.on('voiceStateUpdate', (oldState, newState) => {
-	voiceStateUpdateEvent.fun(client, oldState, newState);
+constants.client.on('voiceStateUpdate', (oldState, newState) => {
+	voiceStateUpdateEvent.fun(constants.client, oldState, newState);
 });
 
-client.on('message', function(message) {
-	messageEvent.fun(client, MessageEmbed, cmd, message);
+constants.client.on('message', function(message) {
+	messageEvent.fun(constants.client, MessageEmbed, commands, message);
 });
 
-client.login(process.env.TOKEN);
+constants.client.login(process.env.TOKEN);

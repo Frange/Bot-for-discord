@@ -31,7 +31,7 @@ const Canvas = require('canvas');
 
 // const constants = require('./events/auxiliar/js');
 // const voiceAux = require('./events/auxiliar/voiceAux.js');
-const canvasAux = require('./events/auxiliar/canvasAux.js');
+// const canvasAux = require('./events/auxiliar/canvasAux.js');
 
 
 const VOICE_CHANNEL_FALL_GUYS = '481523402645962759';
@@ -72,7 +72,7 @@ const images4p = [
 	{ img: './img/4p-5.jpg', xsize: 640, ysize: 360, x1: 330, y1: 110, x2: 250, y2: 150, x3: 410, y3: 150, x4: 410, y4: 150, rad: 40 },
 ];
 
-async function mySend(client, userId, channel) {
+async function mySend(voiceAux, client, userId, channel) {
 	const randomNumber = 1;
 	// let images = images3p;
 	let size = 0, position = 1;
@@ -116,7 +116,7 @@ async function mySend(client, userId, channel) {
 	*/
 
 	console.log(' frg 1');
-	canvasAux.renderAvatar(user, position, images3p, ctx);
+	voiceAux.renderAvatar(user, position, images3p, ctx);
 	console.log(' frg 2');
 
 	/*

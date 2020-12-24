@@ -1,12 +1,7 @@
 /* eslint-disable no-inline-comments */
 /* eslint-disable no-unused-vars */
-const Discord = require('discord.js');
-const Canvas = require('canvas');
 
-const constants = require('./events/auxiliar/constants.js');
-const voiceAux = require('./events/auxiliar/voiceAux.js');
-
-async function renderAvatar(user, position, images, ctx) {
+async function renderAvatar(constants, canvas, user, position, images, ctx) {
 	let xCenter = 0;
 	let yCenter = 0;
 	let radious = 0;
@@ -48,7 +43,7 @@ async function renderAvatar(user, position, images, ctx) {
 
 
 	console.log('a ');
-	const avatar = await Canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
+	const avatar = await canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
 	ctx.drawImage(avatar, (xCenter - radious), (yCenter - radious), (radious * 2), (radious * 2));
 	console.log('b ');
 }
