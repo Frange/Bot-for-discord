@@ -3,9 +3,10 @@
 /* eslint-disable indent */
 
 const constants = require('./events/auxiliar/constants.js');
+const Discord = require('discord.js');
 const { Client, MessageEmbed } = require('discord.js');
-const client = new constants.Discord.Client();
-client.commands = new constants.Discord.Collection();
+const client = new Discord.Client();
+client.commands = new Discord.Collection();
 
 // Imports
 const voiceAux = require('./events/auxiliar/voiceAux.js');
