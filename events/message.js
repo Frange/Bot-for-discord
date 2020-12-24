@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 
 module.exports = {
-	fun: function(constants, messageAux, client, MessageEmbed, cmd, message) {
+	fun: function(constants, messageAux, client, MessageEmbed, message) {
 
 		if (message.author.bot) return;
 
@@ -31,7 +31,7 @@ module.exports = {
                     break;
                 }
                 case constants.COMMAND_SAY: {
-                    cmd.say(message, args);
+                    messageAux.say(message, args);
                     break;
                 }
                 case constants.COMMAND_CLEAR: {

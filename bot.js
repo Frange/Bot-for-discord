@@ -12,9 +12,6 @@ const constants = require('./events/auxiliar/constants.js');
 const voiceAux = require('./events/auxiliar/voiceAux.js');
 const messageAux = require('./events/auxiliar/messageAux.js');
 
-// COMMANDS
-const commands = require('./commands/say.js');
-
 // EVENTS
 const readyEvent = require('./events/ready.js');
 const voiceStateUpdateEvent = require('./events/voiceStateUpdate.js');
@@ -32,7 +29,7 @@ client.on('voiceStateUpdate', (oldState, newState) => {
 });
 
 client.on('message', function(message) {
-	messageEvent.fun(constants, messageAux, client, MessageEmbed, commands, message);
+	messageEvent.fun(constants, messageAux, client, MessageEmbed, message);
 });
 
 client.login(process.env.TOKEN);
