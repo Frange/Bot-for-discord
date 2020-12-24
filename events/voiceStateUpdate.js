@@ -30,7 +30,7 @@ const Discord = require('discord.js');
 const Canvas = require('canvas');
 
 // const constants = require('./events/auxiliar/js');
-const voiceAux = require('./events/auxiliar/voiceAux.js');
+// const voiceAux = require('./events/auxiliar/voiceAux.js');
 const canvasAux = require('./events/auxiliar/canvasAux.js');
 
 
@@ -176,6 +176,10 @@ async function mySend2(client, userId) {
 }
 
 function removeMessages(client, channel) {
+	console.log(`channel: ${channel}`);
+}
+
+function setMuteAll(client, channel, isMute) {
 	console.log(`channel: ${channel}`);
 }
 
