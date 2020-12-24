@@ -33,18 +33,6 @@
 // const voiceAux = require('./events/auxiliar/voiceAux.js');
 // const canvasAux = require('./events/auxiliar/canvasAux.js');
 
-
-const VOICE_CHANNEL_FALL_GUYS = '481523402645962759';
-const CHANNEL_FALL_GUYS = '750723648100237363';
-
-const VOICE_CHANNEL_AMONG_US = '753022620298903645';
-const CHANNEL_AMONG_US = '753022463155372193';
-
-const CHANNEL_TESTING_BOTS = '753361148585312367';
-const CHANNEL_JM = '758610849064681482';
-
-const USER_FRANGE = '308564113431461888';
-
 const images1p = [
 	{ img: './newchallenger.jpg', xsize: 854, ysize: 480, x1: 600, y1: 240, rad: 130 },
 	{ img: './img/1p-1.jpg', xsize: 640, ysize: 360, x1: 330, y1: 130, rad: 40 },
@@ -139,7 +127,7 @@ async function mySend(constants, voiceAux, client, userId, channel) {
 	const attachment = new constants.Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
 	// client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
-	client.channels.cache.get(CHANNEL_JM).send(`Hay un nuevo contrincante ${user.username}`, attachment);
+	client.channels.cache.get(constants.CHANNEL_JM).send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	// canal.send(`Hay un nuevo contrincante ${member}`, attachment);
 }
 
@@ -171,7 +159,7 @@ async function mySend2(constants, client, userId) {
 	const attachment = new constants.Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
 	// client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
-	client.channels.cache.get(CHANNEL_JM).send(`Hay un nuevo contrincante ${user.username}`, attachment);
+	client.channels.cache.get(constants.CHANNEL_JM).send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	// canal.send(`Hay un nuevo contrincante ${member}`, attachment);
 }
 
@@ -183,22 +171,22 @@ function setMuteAll(client, channel, isMute) {
 	console.log(`channel: ${channel}`);
 }
 
-function muteForAmongUs(client, oldState, newState) {
+function muteForAmongUs(constants, client, oldState, newState) {
 	if (oldState != null && oldState.channelID != null) {
 		const oUserName = client.users.cache.find((u) => u.id === oldState.id).username;
 		const oChannelId = oldState.channelID;
 
-		if (oChannelId === VOICE_CHANNEL_AMONG_US) {
+		if (oChannelId === constants.VOICE_CHANNEL_AMONG_US) {
 			console.log(' AMONG US');
 
 			console.log(`OldState: oldState.id: @${oldState.id}`);
-			console.log(`OldState: USER_FRANGE: @${USER_FRANGE}`);
+			console.log(`OldState: USER_FRANGE: @${constants.USER_FRANGE}`);
 
 			console.log(`OldState: Mute: @${oldState.mute}`);
 			console.log(`OldState: SelfMute: @${oldState.selfMute}`);
 			console.log(`OldState: Speaking: @${oldState.speaking}`);
 
-			if (oldState.id === USER_FRANGE) {
+			if (oldState.id === constants.USER_FRANGE) {
 				if (oldState.mute) {
 					// ANTES ESTABA MUTEADO
 					setMuteAll(client, oChannelId, false);
@@ -249,7 +237,7 @@ function showLogs(oldState, newState) {
 module.exports = {
 	fun: function(constants, client, oldState, newState) {
 		showLogs(oldState, newState);
-		muteForAmongUs(client, oldState, newState);
+		muteForAmongUs(constants, client, oldState, newState);
 
 		/*
 		if (oldState != null && newState != null && newState.channelID != null &&
