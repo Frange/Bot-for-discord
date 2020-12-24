@@ -168,7 +168,7 @@ async function mySend2(constants, client, userId) {
 	const avatar = await constants.canvas.loadImage(user.displayAvatarURL({ format: 'jpg' }));
 	ctx.drawImage(avatar, (xCenter - radious), (yCenter - radious), (radious * 2), (radious * 2));
 
-	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
+	const attachment = new constants.Discord.MessageAttachment(canvas.toBuffer(), 'newChallenger.png');
 
 	// client.users.cache.get('308564113431461888').send(`Hay un nuevo contrincante ${user.username}`, attachment);
 	client.channels.cache.get(CHANNEL_JM).send(`Hay un nuevo contrincante ${user.username}`, attachment);
