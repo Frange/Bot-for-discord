@@ -10,6 +10,7 @@ client.commands = new Discord.Collection();
 // Imports
 const constants = require('./events/auxiliar/constants.js');
 const voiceAux = require('./events/auxiliar/voiceAux.js');
+const messageAux = require('./events/auxiliar/messageAux.js');
 
 // COMMANDS
 const commands = require('./commands/say.js');
@@ -27,7 +28,7 @@ client.once('ready', () => {
 });
 
 client.on('voiceStateUpdate', (oldState, newState) => {
-	voiceStateUpdateEvent.fun(constants, client, oldState, newState);
+	voiceStateUpdateEvent.fun(constants, voiceAux, client, oldState, newState);
 });
 
 client.on('message', function(message) {

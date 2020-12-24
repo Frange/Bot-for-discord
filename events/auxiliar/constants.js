@@ -17,16 +17,19 @@ const CHANNEL_JM = '758610849064681482';
 
 // User ids
 const USER_FRANGE = '308564113431461888';
+const USER_PRIME = '468752740147920897';
+const USER_CROKE = '481517697272905730';
 
 // Rol ids
 const ROL_GAYOLO = '753022904618319962';
+const ROL_BOTS = '753521283551068260';
+const ROL_EVERYONE = '481523401899507713';
 
 // Commands
 const COMMAND_SAY = 's';
 const COMMAND_HELP = 'h';
 const COMMAND_CLEAR = 'c';
 // const COMMAND_JOIN = 'j';
-
 
 // Images
 const images1p = [

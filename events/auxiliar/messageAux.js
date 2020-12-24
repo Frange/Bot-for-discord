@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
-const Discord = require('discord.js');
 
-function showLogs(oldState, newState) {
+function sendMessage(oldState, newState) {
 	/*
 		console.log(`OldState: Id: @${oldState.id}`);
 		console.log(`OldState: Connection: @${oldState.connection}`);
@@ -21,8 +20,4 @@ function showLogs(oldState, newState) {
 		console.log(`NewState: Channel: @${newState.channel}`);
 		console.log(`NewState: ChannelID: @${newState.channelID}`);
 	*/
-}
-
-function setMuteAll(client, channel, isMute) {
-	console.log(`channel: ${channel}`);
 }
