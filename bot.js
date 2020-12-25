@@ -28,7 +28,7 @@ client.on('message', function(message) {
 });
 
 client.on('voiceStateUpdate', (oldState, newState) => {
-	voiceStateUpdateEvent.fun(constants, voiceAux, client, oldState, newState);
+	voiceStateUpdateEvent.fun(constants, messageAux, client, oldState, newState);
 });
 
 client.login(process.env.TOKEN);

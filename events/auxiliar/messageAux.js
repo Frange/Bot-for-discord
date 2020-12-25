@@ -1,4 +1,9 @@
+/* eslint-disable quotes */
 /* eslint-disable no-unused-vars */
+
+function showLogs(oldState, newState) {
+	console.log(`Hola`);
+}
 
 function clear(message) {
 	message.channel.bulkDelete(100);
