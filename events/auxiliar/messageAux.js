@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 /* eslint-disable no-unused-vars */
 
-function showLogs(oldState, newState) {
+function showLogs() {
 	console.log(`Hola`);
 }
 
