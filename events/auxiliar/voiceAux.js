@@ -24,7 +24,7 @@ function showLogs(oldState, newState) {
 		console.log(`NewState: Channel: @${newState.channel}`);
 		console.log(`NewState: ChannelID: @${newState.channelID}`);
 	} catch (ex) {
-
+		console.log(`ex: @${ex}`);
 	}
 
 }
