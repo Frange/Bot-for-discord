@@ -16,9 +16,9 @@ module.exports = {
 	fun: function(constants, voiceAux, client, oldState, newState) {
 
 		// console.log(`voiceAux: @${voiceAux}`);
-		// voiceAux.showLogs(oldState, newState);
+		voiceAux.showLogs(oldState, newState);
 
-		voiceAux.muteForAmongUs(constants, client, oldState, newState);
+		// voiceAux.muteForAmongUs(constants, client, oldState, newState);
 
 		/*
 		if (oldState != null && newState != null && newState.channelID != null &&
