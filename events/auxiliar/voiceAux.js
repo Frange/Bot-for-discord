@@ -4,7 +4,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 
-function showLogs(oldState, newState) {
+function showLogs() {
 	try {
 		console.log(`OldState: Id: @${oldState.id}`);
 		console.log(`OldState: Connection: @${oldState.connection}`);
