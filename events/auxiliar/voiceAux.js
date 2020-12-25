@@ -2,7 +2,6 @@
 /* eslint-disable no-inline-comments */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-const Discord = require('discord.js');
 
 function showLogs(oldState, newState) {
 	/*
@@ -157,13 +156,12 @@ function muteForAmongUs(constants, client, oldState, newState) {
 			if (oldState.id === constants.USER_FRANGE) {
 				if (oldState.mute) {
 					// ANTES ESTABA MUTEADO
-					setMuteAll(client, oChannelId, false);
 					if (oldState.selfMute) {
 						console.log(' 1 ANTES ESTABA MUTEADO Y SELF MUTEADO');
-						// muteAll(true);
+						setMuteAll(client, oChannelId, false, true);
 					} else {
 						console.log(' 2 ANTES ESTABA MUTEADO Y NO ESTABA SELF MUTEADO');
-						// mkmkmkmkmuteAll(false);
+						setMuteAll(client, oChannelId, false, false);
 					}
 				} else {
 					console.log(' ANTES ESTABA NO MUTEADO');
