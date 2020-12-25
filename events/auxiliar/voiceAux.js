@@ -6,6 +6,7 @@
 
 function showLogs() {
 	try {
+		console.log('Hola');
 		console.log(`OldState: Id: @${oldState.id}`);
 		console.log(`OldState: Connection: @${oldState.connection}`);
 		console.log(`OldState: Member: @${oldState.member}`);
@@ -24,6 +25,7 @@ function showLogs() {
 		console.log(`NewState: Channel: @${newState.channel}`);
 		console.log(`NewState: ChannelID: @${newState.channelID}`);
 	} catch (ex) {
+		console.log('Hola');
 		console.log(`ex: @${ex}`);
 	}
 
