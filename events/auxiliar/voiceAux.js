@@ -159,20 +159,20 @@ function muteForAmongUs(constants, client, oldState, newState) {
 					// ANTES ESTABA MUTEADO
 					setMuteAll(client, oChannelId, false);
 					if (oldState.selfMute) {
-						console.log(' ANTES ESTABA MUTEADO Y SELF MUTEADO');
+						console.log(' 1 ANTES ESTABA MUTEADO Y SELF MUTEADO');
 						// muteAll(true);
 					} else {
-						console.log(' ANTES ESTABA MUTEADO Y NO ESTABA SELF MUTEADO');
+						console.log(' 2 ANTES ESTABA MUTEADO Y NO ESTABA SELF MUTEADO');
 						// mkmkmkmkmuteAll(false);
 					}
 				} else {
 					console.log(' ANTES ESTABA NO MUTEADO');
-					setMuteAll(true);
+					setMuteAll(client, oChannelId, true);
 
 					if (oldState.selfMute) {
-						console.log(' ANTES ESTABA SELF MUTEADO');
+						console.log(' 3 ANTES ESTABA SELF MUTEADO');
 					} else {
-						console.log(' ANTES NO ESTABA SELF MUTEADO');
+						console.log(' 4 ANTES NO ESTABA SELF MUTEADO');
 					}
 				}
 			}
