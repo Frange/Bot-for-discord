@@ -1,2 +1,1 @@
-# mibot
-Bot de pruebas de Discord
+# Bot for Discord ( just personal purpose )
