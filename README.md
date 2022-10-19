@@ -1,1 +1,1 @@
-# Bot for Discord ( just personal purpose )
+# Bot for Discord ( just for personal purpose )
